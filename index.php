@@ -66,15 +66,15 @@ include './dist/connection.php';
 
 </head>
 
-<body class="relative bg-gray-100 h-full">
+<body class="relative h-full bg-gray-100">
   <!-- Hidden modal dialog -->
   <div id="myModalv" class="modalv">
-    <div class="modalv-content rounded-lg shadow-xl">
+    <div class="rounded-lg shadow-xl modalv-content">
       <!-- <span class="closev">&times;</span> -->
-      <div class="bg-white px-4 pb-2 pt-2 sm:p-6 sm:pb-4">
+      <div class="px-4 pt-2 pb-2 bg-white sm:p-6 sm:pb-4">
         <div class="sm:flex sm:items-start">
-          <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-            <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto bg-red-100 rounded-full sm:mx-0 sm:h-10 sm:w-10">
+            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
             </svg>
           </div>
@@ -87,7 +87,7 @@ include './dist/connection.php';
         </div>
       </div>
       <div class=" sm:flex sm:flex-row-reverse sm:px-6">
-        <button type="button" class="closev inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Confirm</button>
+        <button type="button" class="inline-flex justify-center w-full px-3 py-2 text-sm font-semibold text-white bg-red-600 rounded-md shadow-sm closev hover:bg-red-500 sm:ml-3 sm:w-auto">Confirm</button>
       </div>
 
     </div>
@@ -96,7 +96,7 @@ include './dist/connection.php';
 // Assuming $conn is your database connection
 
 $message = ""; // Initialize message variable
-$redirectUrl = "/Devgil_portfolio/index.php"; // Default redirect URL
+$redirectUrl = "/DevGil/index.php"; // Default redirect URL
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signUp'])) {
     $email = $_POST['email'];
@@ -168,14 +168,14 @@ if (isset($_POST['signIn'])) {
 
         if ($row['role'] == 'admin') {
             $message = "Admin login successful.";
-            $redirectUrl = "/Devgil_portfolio/admin/admin_dashboard.php"; // Admin dashboard
+            $redirectUrl = "/DevGil/admin/admin_dashboard.php"; // Admin dashboard
         } else {
             $message = "User login successful.";
-            $redirectUrl = "/Devgil_portfolio/index.php"; // User home
+            $redirectUrl = "/DevGil/index.php"; // User home
         }
     } else {
         $message = "Incorrect email or password.";
-        $redirectUrl = "/Devgil_portfolio/index.php"; // Redirect to index by default on error
+        $redirectUrl = "/DevGil/index.php"; // Redirect to index by default on error
     }
     // JavaScript to show modal dialog with message and redirect
     echo "<script>
@@ -230,8 +230,8 @@ if (isset($_POST['signIn'])) {
     });
   </script>
   <!-- message -->
-  <button class="fixed message z-10 bottom-4 left-4 inline-flex items-center justify-center text-sm font-medium disabled:pointer-events-none disabled:opacity-50 rounded-full w-9 h-9 bg-red-900 hover:bg-red-500 m-0 opacity-50 cursor-pointer bg-none p-0 normal-case leading-5 hover:text-gray-900" type="button" aria-haspopup="dialog" aria-expanded="false" data-state="closed">
-    <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white block border-gray-200 align-middle">
+  <button class="fixed z-10 inline-flex items-center justify-center p-0 m-0 text-sm font-medium leading-5 normal-case bg-red-900 rounded-full opacity-50 cursor-pointer message bottom-4 left-4 disabled:pointer-events-none disabled:opacity-50 w-9 h-9 hover:bg-red-500 bg-none hover:text-gray-900" type="button" aria-haspopup="dialog" aria-expanded="false" data-state="closed">
+    <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block text-white align-middle border-gray-200">
       <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" class="border-gray-200">
       </path>
     </svg>
@@ -258,7 +258,7 @@ if (isset($_POST['signIn'])) {
   </div>
 
 
-  <nav class="bg-white shadow-xl border-b border-gray-300 fixed w-full z-20 top-0 left-0">
+  <nav class="fixed top-0 left-0 z-20 w-full bg-white border-b border-gray-300 shadow-xl">
     <div class="relative flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
       <a href="" class="flex items-center">
         <img src="./dist/public/LOGO.png" class="absolute w-24 h-24" alt="Flowbite Logo">
@@ -298,7 +298,7 @@ if (isset($_POST['signIn'])) {
               }
             }
             ?>
-            <!-- <a href="./dist/logout.php" class="font-bold text-xl text-white">Logout</a> -->
+            <!-- <a href="./dist/logout.php" class="text-xl font-bold text-white">Logout</a> -->
           </li>
           <li class="hover:text-[#ff3939] text-sm text-gray-800 font-semibold">
           <?php
@@ -317,25 +317,25 @@ if (isset($_POST['signIn'])) {
         <button id="buttonlogin">
           <?php
           if (isset($_SESSION['email'])) {
-            echo '<a href="./dist/logout.php" class="text-sm text-gray-800 font-semibold p-12">Logout</a>';
+            echo '<a href="./dist/logout.php" class="p-12 text-sm font-semibold text-gray-800">Logout</a>';
           } else {
-            echo '<p class="text-sm text-gray-800 font-semibold">Admin</p>';
+            echo '<p class="text-sm font-semibold text-gray-800">Admin</p>';
           }
           ?>
         </button>
       </div>
 
       <!-- Login Modal -->
-      <div id="loginModal" class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center hidden">
-        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+      <div id="loginModal" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full modal">
+        <div class="absolute w-full h-full bg-gray-900 opacity-50 modal-overlay"></div>
 
         <div class="modal-container bg-white rounded h-[486px] w-[1000px] shadow-lg z-50 ">
           <!-- Add your modal content here -->
 
 
 
-          <div class="grid-cols-3 grid justify-center overflow-hidden">
-            <div class="hidden lg:block lg:w-11/12 bg-cover h-full" style="background-image:url('./dist/public/login-side.png')">
+          <div class="grid justify-center grid-cols-3 overflow-hidden">
+            <div class="hidden h-full bg-cover lg:block lg:w-11/12" style="background-image:url('./dist/public/login-side.png')">
             </div>
 
             <!-- sign in -->
@@ -346,30 +346,30 @@ if (isset($_POST['signIn'])) {
                   <label for="profile_image">Profile Image:</label>
   <input type="file" id="profile_image" name="profile_image" accept="image/*" required>
                   <div class="mt-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
-                    <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="email" required />
+                    <label class="block mb-2 text-sm font-bold text-gray-700">Email Address</label>
+                    <input class="block w-full px-4 py-2 text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:shadow-outline" type="email" name="email" required />
                   </div>
                   <div class="mt-4">
                     <div class="flex justify-center">
-                      <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                      <label class="block mb-2 text-sm font-bold text-gray-700">Password</label>
                     </div>
-                    <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" name="password" required />
+                    <input class="block w-full px-4 py-2 text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:shadow-outline" type="password" name="password" required />
                   </div>
                   <div class="mt-4">
                     <div class="flex justify-center">
-                      <label class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
+                      <label class="block mb-2 text-sm font-bold text-gray-700">Confirm Password</label>
                     </div>
-                    <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" name="confirm_password" required />
+                    <input class="block w-full px-4 py-2 text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:shadow-outline" type="password" name="confirm_password" required />
                   </div>
                   <div class="flex items-start mt-3">
                     <div class="flex items-center h-5">
-                      <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-900 rounded bg-gray-100 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                      <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 bg-gray-100 border border-gray-900 rounded focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
                     </div>
                     <div class="ml-3 text-xs">
                       <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
                     </div>
                   </div>
-                  <button type="submit" value="sign up" name="signUp" class="bg-gray-700 text-white font-bold mt-2 py-2 px-4 w-full rounded hover:bg-red-600">Signup</button>
+                  <button type="submit" value="sign up" name="signUp" class="w-full px-4 py-2 mt-2 font-bold text-white bg-gray-700 rounded hover:bg-red-600">Signup</button>
                 </form>
               </div>
 
@@ -379,33 +379,33 @@ if (isset($_POST['signIn'])) {
                 <form class="slides" action="" method="post">
                   <h1>Login</h1>
                   <div class="social-container">
-                    <p class="text-xl text-gray-600 text-center"></p>
+                    <p class="text-xl text-center text-gray-600"></p>
                     <a href="#" class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                       <div class="px-4 py-3">
-                        <svg class="h-4 w-4" viewBox="0 0 40 40">
+                        <svg class="w-4 h-4" viewBox="0 0 40 40">
                           <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
                           <path d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z" fill="#FF3D00" />
                           <path d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z" fill="#4CAF50" />
                           <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2" />
                         </svg>
                       </div>
-                      <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Sign in with Google</h1>
+                      <h1 class="w-5/6 px-4 py-3 font-bold text-center text-gray-600">Sign in with Google</h1>
                     </a>
                   </div>
                   <div class="mt-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
-                    <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="email" required />
+                    <label class="block mb-2 text-sm font-bold text-gray-700">Email Address</label>
+                    <input class="block w-full px-4 py-2 text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:shadow-outline" type="email" name="email" required />
                   </div>
                   <div class="mt-4">
                     <div class="flex justify-center">
-                      <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                      <label class="block mb-2 text-sm font-bold text-gray-700">Password</label>
                     </div>
-                    <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" name="password" required />
+                    <input class="block w-full px-4 py-2 text-gray-700 bg-gray-200 border border-gray-300 rounded appearance-none focus:outline-none focus:shadow-outline" type="password" name="password" required />
                   </div>
                   <div class="mt-4">
                     <a href="#" class="text-xs text-gray-500">Forget Password?</a>
                   </div>
-                  <button type="submit" value="sign in" name="signIn" class="bg-gray-700 text-white font-bold mt-2 py-2 px-4 w-full rounded hover:bg-red-600">Login</button>
+                  <button type="submit" value="sign in" name="signIn" class="w-full px-4 py-2 mt-2 font-bold text-white bg-gray-700 rounded hover:bg-red-600">Login</button>
                 </form>
               </div>
               <div class="overlay-container">
@@ -413,8 +413,8 @@ if (isset($_POST['signIn'])) {
                   <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
                     <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost flex justify-around items-center bg-gray-700 text-white font-bold mt-2 py-2 px-4 w-36 rounded hover:bg-green-600" id="signIn">
-                      <div class="arrow mt-2">
+                    <button class="flex items-center justify-around px-4 py-2 mt-2 font-bold text-white bg-gray-700 rounded ghost w-36 hover:bg-green-600" id="signIn">
+                      <div class="mt-2 arrow">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -426,9 +426,9 @@ if (isset($_POST['signIn'])) {
                   <div class="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
                     <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost bg-gray-700 flex justify-around text-white font-bold mt-2 py-2 px-4 w-36 rounded hover:bg-green-600" id="signUp">
+                    <button class="flex justify-around px-4 py-2 mt-2 font-bold text-white bg-gray-700 rounded ghost w-36 hover:bg-green-600" id="signUp">
                       <div class="ml-4">Sign Up</div>
-                      <div class="arrows mt-2">
+                      <div class="mt-2 arrows">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -619,12 +619,12 @@ if (isset($_POST['signIn'])) {
       <div class="grid gap-2 bg-gray-100 lg:grid-cols-4 sm:grid-cols-2 p-7 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
 
         <div class="flex items-center justify-center">
-          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="card bg-cover bg-center" id="cards">
+          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="bg-center bg-cover card" id="cards">
             <div class="bg-black h-[248px] w-[184px] opacity-75">
               <div class="card-info">
                 <div class="card-avatar"></div>
                 <div class="font-mono text-base font-bold text-white">THE GIL OF GAMERS</div>
-                <div class="card-subtitle text-white">ECOMMERCE</div>
+                <div class="text-white card-subtitle">ECOMMERCE</div>
               </div>
               <ul class="card-social">
                 <li class="card-social__item">
@@ -648,12 +648,12 @@ if (isset($_POST['signIn'])) {
         </div>
 
         <div class="flex items-center justify-center">
-          <button style="background-image: url('./dist/public/gallery.jpg')" class="card bg-cover bg-center" id="cards">
+          <button style="background-image: url('./dist/public/gallery.jpg')" class="bg-center bg-cover card" id="cards">
           <div class="bg-black h-[248px] w-[184px] opacity-75">
             <div class="card-info">
               <div class="card-avatar"></div>
               <div class="font-mono text-base font-bold text-white">BLOGS</div>
-              <div class="card-subtitle text-white">GALLERY</div>
+              <div class="text-white card-subtitle">GALLERY</div>
             </div>
             <ul class="card-social">
               <li class="card-social__item">
@@ -677,12 +677,12 @@ if (isset($_POST['signIn'])) {
         </div>
 
         <div class="flex items-center justify-center">
-          <button style="background-image: url('./dist/public/source.jpg')" class="card bg-cover bg-center" id="cards">
+          <button style="background-image: url('./dist/public/source.jpg')" class="bg-center bg-cover card" id="cards">
           <div class="bg-black h-[248px] w-[184px] opacity-75">  
           <div class="card-info">
               <div class="card-avatar"></div>
               <div class="font-mono text-base font-bold text-white">DEVGIL PROJECTS</div>
-              <div class="card-subtitle text-white">REFERENCE</div>
+              <div class="text-white card-subtitle">REFERENCE</div>
             </div>
             <ul class="card-social">
               <li class="card-social__item">
@@ -706,12 +706,12 @@ if (isset($_POST['signIn'])) {
         </div>
 
         <div class="flex items-center justify-center">
-          <button style="background-image: url('./dist/public/game.jpg')" class="card bg-cover bg-center" id="cards">
+          <button style="background-image: url('./dist/public/game.jpg')" class="bg-center bg-cover card" id="cards">
           <div class="bg-black h-[248px] w-[184px] opacity-75">   
           <div class="card-info">
               <div class="card-avatar"></div>
               <div class="font-mono text-base font-bold text-white">LIVE VIEW</div>
-              <div class="card-subtitle text-white">GAME VIDEO</div>
+              <div class="text-white card-subtitle">GAME VIDEO</div>
             </div>
             <ul class="card-social">
               <li class="card-social__item">
@@ -2182,7 +2182,7 @@ if (isset($_POST['signIn'])) {
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
             <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
           </div>
-          <button type="submit" class="px-5 py-3 text-sm font-medium text-center text-white rounded-lg bg-red-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
+          <button type="submit" class="px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
         </form>
       </div>
     </section>
@@ -2191,9 +2191,9 @@ if (isset($_POST['signIn'])) {
   <!-- contact end  -->
 
   <!-- gallery -->
-  <div class="bg-gray-100 dark:bg-gray-800 h-full py-6 sm:py-8 lg:py-12">
-    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-      <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+  <div class="h-full py-6 bg-gray-100 dark:bg-gray-800 sm:py-8 lg:py-12">
+    <div class="px-4 mx-auto max-w-screen-2xl md:px-8">
+      <div class="flex items-center justify-between gap-8 mb-4 sm:mb-8 md:mb-12">
         <div class="flex items-center gap-12">
           <h2 class="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">Gallery</h2>
 
@@ -2202,53 +2202,53 @@ if (isset($_POST['signIn'])) {
           </p>
         </div>
 
-        <a href="#" class="inline-block rounded-lg border bg-white dark:bg-gray-700 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">
+        <a href="#" class="inline-block px-4 py-2 text-sm font-semibold text-center text-gray-500 transition duration-100 bg-white border rounded-lg outline-none dark:bg-gray-700 dark:border-none dark:text-gray-200 ring-indigo-300 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">
           More
         </a>
       </div>
 
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
         <!-- image - start -->
-        <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-          <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-80">
+          <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
 
-          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
           </div>
 
-          <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">VR</span>
+          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">VR</span>
         </a>
         <!-- image - end -->
 
         <!-- image - start -->
-        <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-          <img src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Magicle" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:col-span-2 md:h-80">
+          <img src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Magicle" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
 
-          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
           </div>
 
-          <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Tech</span>
+          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Tech</span>
         </a>
         <!-- image - end -->
 
         <!-- image - start -->
-        <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-          <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Martin Sanchez" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:col-span-2 md:h-80">
+          <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Martin Sanchez" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
 
-          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
           </div>
 
-          <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Dev</span>
+          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Dev</span>
         </a>
         <!-- image - end -->
 
         <!-- image - start -->
-        <a href="#" class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-80">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
 
-          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
           </div>
 
-          <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Retro</span>
+          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Retro</span>
         </a>
         <!-- image - end -->
       </div>
@@ -2259,46 +2259,46 @@ if (isset($_POST['signIn'])) {
 
   <!-- ct -->
   <div class="h-full text-gray-800 bg-gray-100 dark:text-white">
-    <div class="container mx-auto px-4 py-8">
-      <h2 class="text-3xl font-semibold text-center text-gray-800 dark:text-gray-200 mb-8">
+    <div class="container px-4 py-8 mx-auto">
+      <h2 class="mb-8 text-3xl font-semibold text-center text-gray-800 dark:text-gray-200">
         Certificate
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation (1).png" alt="Headless UI" class="w-full h-64 object-cover">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation (1).png" alt="Headless UI" class="object-cover w-full h-64">
           <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-red-500 dark:text-red-300 mb-2">Headless UI</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4 two-lines">
+            <h3 class="mb-2 text-xl font-semibold text-red-500 dark:text-red-300">Headless UI</h3>
+            <p class="mb-4 text-gray-700 dark:text-gray-300 two-lines">
               Completely unstyled, fully accessible UI
               components,
               designed to integrate beautifully with Tailwind CSS.
             </p>
-            <a href="#" class="inline-block bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full">Learn
+            <a href="#" class="inline-block px-4 py-2 text-white bg-red-500 rounded-full hover:bg-red-600">Learn
               More</a>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation (2).png" alt="Heroicons" class="w-full h-64 object-cover">
+        <div class="overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation (2).png" alt="Heroicons" class="object-cover w-full h-64">
           <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-red-500 dark:text-red-300 mb-2">Heroicons</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4 two-lines">A set of 450+ free MIT-licensed SVG icons.
+            <h3 class="mb-2 text-xl font-semibold text-red-500 dark:text-red-300">Heroicons</h3>
+            <p class="mb-4 text-gray-700 dark:text-gray-300 two-lines">A set of 450+ free MIT-licensed SVG icons.
               Available
               as basic SVG icons and via first-party React and Vue libraries.</p>
-            <a href="#" class="inline-block bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full">Learn
+            <a href="#" class="inline-block px-4 py-2 text-white bg-red-500 rounded-full hover:bg-red-600">Learn
               More</a>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation.png" alt="Hero Patterns" class="w-full h-64 object-cover">
+        <div class="overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation.png" alt="Hero Patterns" class="object-cover w-full h-64">
           <div class="p-4 md:p-6">
-            <h3 class="text-xl font-semibold text-red-500 dark:text-red-300 mb-2">Hero Patterns</h3>
-            <p class="text-gray-700 dark:text-gray-300 mb-4 two-lines">A collection of over 100 free MIT-licensed
+            <h3 class="mb-2 text-xl font-semibold text-red-500 dark:text-red-300">Hero Patterns</h3>
+            <p class="mb-4 text-gray-700 dark:text-gray-300 two-lines">A collection of over 100 free MIT-licensed
               high-quality
               SVG patterns for you to use in your web projects.</p>
-            <a href="#" class="inline-block bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full">Learn
+            <a href="#" class="inline-block px-4 py-2 text-white bg-red-500 rounded-full hover:bg-red-600">Learn
               More</a>
           </div>
         </div>

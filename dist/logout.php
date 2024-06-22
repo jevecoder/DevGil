@@ -8,6 +8,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to login page or homepage
-header("Location: /Devgil_portfolio/index.php");
+header("Location: /DevGil/index.php");
 exit;
 ?>
