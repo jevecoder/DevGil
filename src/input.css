@@ -217,7 +217,7 @@ input {
 
 
    /*Card footer*/
-   /* .card-social {
+   .card-social {
     transform: translateY(200%);
     display: flex;
     justify-content: space-around;
@@ -250,7 +250,7 @@ input {
    .card-subtitle {
     color: #859ba8;
     font-size: 0.8em;
-   } */
+   }
 
    /*Hover*/
    .card:hover {
