@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $reset_link = "http://yourdomain.com/reset_password.php?token=$token";
         $subject = "Password Reset Request";
         $message = "Click the following link to reset your password: $reset_link";
-        $headers = "From: no-reply@yourdomain.com";
+        $headers = "From: jerillabagnoy6@gmail.com";
 
         if (mail($email, $subject, $message, $headers)) {
             echo "A password reset link has been sent to your email.";

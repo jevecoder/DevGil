@@ -21,54 +21,15 @@ include './dist/connection.php';
     document.documentElement.classList.add('js')
   </script>
   <link href="./dist/output.css" rel="stylesheet">
-  <link href="./src/input.css" rel="stylesheet">
+  <link href="./dist/src/input.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  <script src="./js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
-
-  <style>
-    /* modal validation  */
-    .modalv {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .modalv-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 500px;
-      text-align: center;
-    }
-
-    .closev {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .closev:hover,
-    .closev:focus {
-      text-decoration: none;
-      cursor: pointer;
-    }
-  </style>
-
+  <script src="https://kit.fontawesome.com/25c515add0.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="relative h-full bg-cover" style="background-image: url('./dist/public/whtie_building1.jpg');">
+<script src="./dist/js/script.js"></script>
   <!-- Hidden modal dialog -->
   <div id="myModalv" class="modalv">
     <div class="rounded-lg shadow-xl modalv-content">
@@ -104,9 +65,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signUp'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
-    $phone = $_POST['phone'];
-    $birthdate = $_POST['birthdate'];
-    $gender = $_POST['gender'];
+
+    // password strength 
+    if (strlen($password) < 8) {
+      $message = "Password must be at least 8 characters long.";
+      // Handle the error
+  }
 
     // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -358,13 +322,13 @@ if (isset($_POST['signIn'])) {
       <div id="loginModal" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full modal">
         <div class="absolute w-full h-full bg-gray-900 opacity-50 modal-overlay"></div>
 
-        <div class="modal-container bg-white rounded h-[486px] w-[1000px] shadow-lg z-50 ">
+        <div class="modal-container bg-white rounded h-[480px] w-[1000px] shadow-lg z-50 ">
           <!-- Add your modal content here -->
 
 
 
           <div class="grid justify-center grid-cols-3 overflow-hidden">
-            <div class="hidden h-full bg-cover lg:block lg:w-11/12" style="background-image:url('./dist/public/login-side.png')">
+            <div class="hidden w-full h-full bg-cover lg:block" style="background-image:url('./dist/public/login-side.png')">
             </div>
 
             <!-- sign in -->
@@ -382,36 +346,40 @@ if (isset($_POST['signIn'])) {
   </div>
 
   <div class="relative z-0 w-full mt-5 group">
-      <input id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-black appearance-none dark:text-black dark:border-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " type="password" name="password" required  />
-      <label for="floating_email" class="left-0 peer-focus:font-medium absolute text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-  </div>
+      <input id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-black appearance-none dark:text-black dark:border-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " type="password" name="password" required  onkeyup="checkPasswordStrength()"/>
+      <label for="floating_password" class="left-0 peer-focus:font-medium absolute text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+    </div>
+
+<div id="password-strength" class="text-xs text-gray-500 dark:text-gray-400"></div>
+
+<div class="flex justify-start w-full">
+        <div id="icon-length"></div>
+        <span id="icon-length-text" class="ml-1"></span>
+    </div>
+    <div class="flex justify-start w-full">
+        <div id="icon-uppercase"></div>
+        <span id="icon-uppercase-text" class="ml-1"></span>
+    </div>
+    <div class="flex justify-start w-full">
+        <div id="icon-lowercase"></div>
+        <span id="icon-lowercase-text" class="ml-1"></span>
+    </div>
+    <div class="flex justify-start w-full">
+        <div id="icon-number"></div>
+        <span id="icon-number-text" class="ml-1"></span>
+    </div>
+    <div class="flex justify-start w-full">
+        <div id="icon-special"></div>
+        <span id="icon-special-text" class="ml-1"></span>
+    </div>
+
 
   <div class="relative z-0 w-full mt-5 group">
       <input id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-black appearance-none dark:text-black dark:border-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " type="password" name="confirm_password" required  />
       <label for="floating_email" class="left-0 peer-focus:font-medium absolute text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm Password</label>
   </div>
 
-  <div class="relative z-0 w-full mb-1 group">
-        <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_phone" class="left-0 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
-    </div>
 
- 
-    <div class="relative z-0 w-full mt-5 group">
-    <input id="floating_birthdate" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-black appearance-none dark:text-black dark:border-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " type="date" name="birthdate" required />
-    <label for="floating_birthdate" class="left-0 peer-focus:font-medium absolute text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Birthdate</label>
-</div>
-
-
-<div class="mt-4">
-<label for="gender">Gender:</label>
-    <select id="gender" name="gender" required>
-      <option value="">Select</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select>
-</div>
                   <div class="flex items-start mt-3">
                     <div class="flex items-center h-5">
                       <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 bg-gray-100 border border-gray-900 rounded focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
@@ -421,7 +389,7 @@ if (isset($_POST['signIn'])) {
                     </div>
                   </div>
 
-                  <button type="submit" value="sign up" name="signUp" class="w-full px-4 py-2 mt-2 font-bold text-white bg-gray-700 rounded hover:bg-red-600">Signup</button>
+                  <button type="submit" id="register-btn" value="sign up" name="signUp" class="w-full px-4 py-2 mt-2 font-bold text-white bg-gray-700 rounded hover:bg-red-600">Signup</button>
                 </form>
               </div>
 
@@ -456,7 +424,7 @@ if (isset($_POST['signIn'])) {
 
 
                   <div class="mt-4">
-                    <a href="#" class="text-xs text-gray-500">Forget Password?</a>
+                    <a href="./dist/forgot_password.php" class="text-xs text-gray-500">Forget Password?</a>
                   </div>
                   <button type="submit" value="sign in" name="signIn" class="w-full px-4 py-2 mt-2 font-bold text-white bg-gray-700 rounded hover:bg-red-600">Login</button>
                 </form>
