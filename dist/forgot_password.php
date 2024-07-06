@@ -10,6 +10,12 @@ require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 
+// Set default timezone
+date_default_timezone_set('Asia/Manila'); // Set this to your 
+
+// Verify current time
+echo "Current PHP Time: " . date('Y-m-d H:i:s') . "<br>";
+
 // Subukan magpadala ng email
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['forgotPassword'])) {
     $email = $conn->real_escape_string($_POST['email']);

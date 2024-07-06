@@ -2,6 +2,8 @@
 session_start();
 include 'connection.php'; // Include your database connection file
 
+$message = ''; // Initialize an empty message variable
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['verifyCode'])) {
     if (!isset($_SESSION['email'])) {
         echo "<script>
@@ -14,20 +16,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['verifyCode'])) {
     $email = $_SESSION['email'];
     $resetCode = $conn->real_escape_string($_POST['reset_code']);
 
-    $checkCode = "SELECT * FROM users WHERE email='$email' AND reset_code='$resetCode' AND token_expiry > NOW()";
+    // Query to check if the reset code is valid and not expired
+    $checkCode = "SELECT * FROM users WHERE email='$email' AND reset_code='$resetCode' AND token_expiry > CURRENT_TIMESTAMP";
+    
+    // Execute the query
     $result = $conn->query($checkCode);
 
+    // Check if there's an error in the query execution
+    if (!$result) {
+        echo "Error: " . $conn->error;
+        exit(); // Add appropriate error handling logic here
+    }
+
+    // Check if there are rows returned
     if ($result->num_rows > 0) {
-        // Code is valid, redirect to reset_password.php
-        header("Location: reset_password.php");
+        // Code is valid, set session variable to indicate success
+        $_SESSION['reset_code_verified'] = true;
+        
+        // Redirect to reset password page with success message
+        header("Location: reset_password.php?verified=true");
         exit();
     } else {
         // Invalid reset code or expired
-        echo "<script>
-                alert('Invalid reset code or the code has expired.');
-                window.location.href = '/DevGil/dist/verify_code.php';
-              </script>";
-        exit();
+        $message = "Invalid reset code or the code has expired.";
     }
 }
 ?>
@@ -41,6 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['verifyCode'])) {
 </head>
 <body>
     <h2>Verify Code</h2>
+    <?php if (!empty($message)) : ?>
+        <div style="color: red;"><?php echo $message; ?></div>
+    <?php endif; ?>
     <form method="post" action="verify_code.php">
         <input type="text" name="reset_code" placeholder="Enter the reset code" required>
         <button type="submit" name="verifyCode">Verify Code</button>

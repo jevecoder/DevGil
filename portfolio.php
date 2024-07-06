@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devgil</title>
-  <link rel="icon" href="./dist/public/LOGO.png" type="image/icon type">
+  <link rel="icon" href="./dist/public/logo_profile1.png" type="image/icon type">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,38 +15,150 @@
     document.documentElement.classList.add('js')
   </script>
   <link href="./dist/output.css" rel="stylesheet">
-  <link href="./src/input.css" rel="stylesheet">
+  <link href="./dist/src/input.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  <script src="./js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+  <script src="https://kit.fontawesome.com/25c515add0.js" crossorigin="anonymous"></script>
 
 </head>
 
-<body class="relative h-full bg-cover" style="background-image: url('./dist/public/whtie_building1.jpg');">
-  <div id="home" class="lg:h-full lg:pt-[69px] sm:pt-[58px]">
+<body class="relative h-full">
+
+<nav class="fixed top-0 left-0 z-20 w-full h-40 text-xs text-gray-400 bg-transparent">
+    <div class="grid grid-cols-4 gap-4 p-8">
+      
+    <div>  
+    <a href="" class="relative flex items-center gap-2">
+        <img src="./dist/public/logo_profile1.png" class="h-10 w-9 " alt="Flowbite Logo">
+        <span class="absolute mt-3 font-mono text-3xl font-semibold text-white ml-11">Gil{<i class="fa-solid fa-code"></i>}</span>
+        <span class="absolute mt-24 font-sans text-sm font-semibold text-white">World's fastest Web Development.</span>
+      </a>
+    </div>
+
+    <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
+      <p>Services</p>
+      <div class="flex flex-col">
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Design Commercial</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Web Design</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
+      <p>Education</p>
+      <div class="flex flex-col">
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Courses</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Portfolio Reviews</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
+      <p>Contact</p>
+      <div class="flex flex-col">
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Jerillabagnoy6@gmail.com</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">+63 916-5298-478</a>
+      </div>
+    </div>
+      <!-- Mobile Navigation Button -->
+      <button id="mobileMenuButton" class="md:hidden" onclick="toggleMobileMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      
+
+
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div class="md:hidden" id="mobileMenu" style="display: none;">
+      <ul class="flex flex-col items-center justify-center p-4 mt-4 font-medium border rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#home">Home</a>
+        </li>
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#about">About</a>
+        </li>
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#projects">Projects</a>
+        </li>
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#contact">Contact</a>
+        </li>
+        <div class="">
+          <button id="buttonlogin">
+            Login
+          </button>
+        </div>
+      </ul>
+    </div>
+
+    <script>
+      function toggleMobileMenu() {
+        var mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.style.display = (mobileMenu.style.display === "none" || mobileMenu.style.display === "") ? "block" : "none";
+      }
+    </script>
+  </nav>
+  
+  <div id="home">
     <header class="relative bg-gray-900 w-full h-[600px]">
 
-      <div class="slideshow-container">
+    <style>
+.flashLightContainer {
+  background-image: url('./dist/public/content.jfif');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-        <div class="relative">
-          <div class="mySlides fade">
-            <img class="w-full h-[600px] opacity-30" src="./dist/public/bg1.jpeg" alt="Image">
-            <div class="absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-              <p class="font-bold lg:text-6xl sm:text-4xl lg:w-[1000px] text-center animate__animated animate__fadeInUp">Welcome to my Portfolio</p>
-            </div>
-          </div>
-        </div>
+.flashLightContainer::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Adjust height as needed */
+    background: linear-gradient(to top, rgba(0, 0, 0, 2.9), transparent); /* Inner shadow gradient */
+    pointer-events: none; /* Ensures the pseudo-element doesn't block interaction */
+  }
+.flashLightContainer p {
+  background:#f00;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+.flashlight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+    </style>
+    
+    <div class="w-full h-full bg-contain flashLightContainer">
+  <div class="flashlight"></div>
+  <p>Super secret secret</p>
+</div>
+    <script>
+const flashlight = document.querySelector(".flashlight");
+        const container = document.querySelector(".flashLightContainer");
+        const rect = container.getBoundingClientRect();
 
-        <div class="relative">
-          <div class="mySlides fade">
-            <img class="w-full h-[600px] opacity-30" src="./dist/public/bg2.jpeg">
-            <div class="absolute text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-              <p class="font-bold lg:text-6xl sm:text-4xl lg:w-[1000px] text-center animate__animated animate__fadeInUp">Hello, I'am Jeril , Focusing on Functional Elements Creating Beautiful Design Experience.</p>
-            </div>
-          </div>
-        </div>
+        container.addEventListener("mousemove", function (e) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-      </div>
+            // Move flashlight effect
+            flashlight.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 300px, #000 400px)`;
+
+            // Parallax effect for background image
+            const moveX = (x - rect.width / 2) * 0.02;
+            const moveY = (y - rect.height / 2) * 0.02;
+            container.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+        });
+    </script>
       <br>
 
       <script>
@@ -79,7 +190,7 @@
       </script>
     </header>
 
-    <section class="bg-gray-100 dark:bg-gray-900">
+    <section class="bg-black dark:bg-gray-900">
       <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7 delay-[300ms] duration-[600ms] taos:translate-x-[-50px] taos:opacity-0" data-taos-offset="400">
           <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">About Me</h1>
