@@ -1712,7 +1712,7 @@ ul.skills li.more input:checked + label:hover {
 
 /* CodePen Card */
 
-.cardp {
+/* .cardp {
   width: 15em;
   height: 10em;
   background-color: #252525;
@@ -1928,7 +1928,7 @@ ul.skills li.more input:checked + label:hover {
   opacity: 1;
 }
 
-/* The Main Switch */
+
 
 .card_content {
   display: flex;
@@ -1936,7 +1936,7 @@ ul.skills li.more input:checked + label:hover {
   justify-content: center;
 }
 
-/* The switch - the box around the slider */
+
 
 .switch_738 {
   font-size: 13px;
@@ -1946,13 +1946,13 @@ ul.skills li.more input:checked + label:hover {
   height: 3.3em;
 }
 
-/* Hide default HTML checkbox */
+
 
 .switch_738 .chk_738 {
   opacity: 0;
   width: 0;
   height: 0;
-}
+} */
 
 /* The slider */
 

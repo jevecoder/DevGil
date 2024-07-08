@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devgil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devgil</title>
   <link rel="icon" href="./dist/public/logo_profile1.png" type="image/icon type">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,13 +20,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
   <script src="https://kit.fontawesome.com/25c515add0.js" crossorigin="anonymous"></script>
-
 </head>
-
 <body class="bg-black">
-
-
-  
   <div id="home">
     <header class="relative bg-black w-full h-[613px]">
 
@@ -183,33 +178,24 @@ const flashlight = document.querySelector(".flashlight");
         }
       </script>
 
-<div class="grid justify-between w-full grid-flow-col grid-cols-4 pr-6 font-sans text-sm font-bold -mt-[317px] animate__animated animate__fadeInUp">
-    <div class="z-10 grid items-start justify-center w-full col-span-3 grid-rows-1 pt-20 pr-20 font-medium text-gray-200">
+<div class="grid justify-between w-full grid-flow-col grid-cols-3 pr-6 font-sans text-sm font-bold -mt-[317px] animate__animated animate__fadeInUp">
+    <div class="z-10 grid items-start justify-start w-full col-span-3 grid-rows-1 pr-20 font-medium text-gray-200 pt- pl-7">
     <div class="text-6xl">
       <p class="text-sm text-[#1ff990]">Latest Design Course</p>
-      <p>Stand Out as</p>
-      <p>a Web Designer</p>
-      <p class="mt-6 font-sans text-sm">This is literally the best advice that I tell every web designer. I’ve stood out for 20+years as a successful <br> web designer, now it’s your turn.</p>
-    
-      <button class="w-[250px] flex item-center justify-center px-6 py-5 mt-7 font-semibold bg-transparent hover-slide1">
+      <p>Promote your product</p>
+      <p>straight to designers.</p>
+      <p class="mt-6 font-sans text-sm">Dann’s team will write and film your commercials <br> and share on X. You know, commercials for <br> designers by designers.</p>
+     <div class="flex flex-row gap-5 shadow-2xl">
+      <button class="w-[300px] flex item-center justify-center px-6 py-5 mt-7 font-semibold bg-transparent hover-slide1">
         <span class="text-sm font-medium">View the Course</span>
     </button>
-  
+    <p class="flex items-center justify-center text-sm pt-7">Cost: ₱1,000 - ₱5,000</p>
+  </div>
     </div>
     </div>
     
     <div></div>
     <div></div>
-    <div class="z-10">
-    <div class="mx-auto overflow-hidden bg-[#1ff990] shadow-lg max-w-72">
-    <img class="object-cover w-full h-48" src="./dist/public/login-side.png" alt="Hotel Room">
-    <div class="px-6 py-7">
-    <div class="flex flex-col">
-      <span class="text-sm font-medium text-black">Get commercials created and shared straight to the heart of the design community.</span>
-      <button class="px-6 py-5 mt-2 font-semibold bg-transparent hover-slide">
-        <span class="text-sm font-medium">View Commercials</span>
-    </button>
-    </div>
 
     <style>
       .hover-slide::before {
@@ -253,7 +239,7 @@ const flashlight = document.querySelector(".flashlight");
   width: 100%;
   height: 100%;
   background-color: #1ff990;
-  transition: left 0.3s ease;
+  transition: left 1.0s ease;
   z-index: 0;
 }
 
@@ -279,463 +265,144 @@ const flashlight = document.querySelector(".flashlight");
 
     </div>
   </div>
-    </div>
+
+    
   </div>
-
-<div class="-z-10 p-7 animate__animated animate__fadeInUp">
-      <div class="p-2 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
-        <p class="max-w-2xl mb-4 text-sm font-medium leading-none tracking-tight text-white">Work Gallery</p>
-      </div>
-      <div class="grid gap-5 lg:grid-cols-6 sm:grid-cols-2 delay-[300ms] duration-[200ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="bg-center bg-cover card" id="cards">
-            <div class="bg-black h-[248px] w-[184px] opacity-75">
-              <div class="card-info">
-                <div class="card-avatar"></div>
-                <div class="font-mono text-base font-bold text-white">THE GIL OF GAMERS</div>
-                <div class="text-white card-subtitle">ECOMMERCE</div>
-              </div>
-              <ul class="card-social">
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/gallery.jpg')" class="bg-center bg-cover card" id="cards">
-          <div class="bg-black h-[248px] w-[184px] opacity-75">
-            <div class="card-info">
-              <div class="card-avatar"></div>
-              <div class="font-mono text-base font-bold text-white">BLOGS</div>
-              <div class="text-white card-subtitle">GALLERY</div>
-            </div>
-            <ul class="card-social">
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                </svg>
-              </li>
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                </svg>
-              </li>
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                </svg>
-              </li>
-            </ul>
-          </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="bg-center bg-cover card" id="cards">
-            <div class="bg-black h-[248px] w-[184px] opacity-75">
-              <div class="card-info">
-                <div class="card-avatar"></div>
-                <div class="font-mono text-base font-bold text-white">THE GIL OF GAMERS</div>
-                <div class="text-white card-subtitle">ECOMMERCE</div>
-              </div>
-              <ul class="card-social">
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="bg-center bg-cover card" id="cards">
-            <div class="bg-black h-[248px] w-[184px] opacity-75">
-              <div class="card-info">
-                <div class="card-avatar"></div>
-                <div class="font-mono text-base font-bold text-white">THE GIL OF GAMERS</div>
-                <div class="text-white card-subtitle">ECOMMERCE</div>
-              </div>
-              <ul class="card-social">
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="bg-center bg-cover card" id="cards">
-            <div class="bg-black h-[248px] w-[184px] opacity-75">
-              <div class="card-info">
-                <div class="card-avatar"></div>
-                <div class="font-mono text-base font-bold text-white">THE GIL OF GAMERS</div>
-                <div class="text-white card-subtitle">ECOMMERCE</div>
-              </div>
-              <ul class="card-social">
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="bg-center bg-cover card" id="cards">
-            <div class="bg-black h-[248px] w-[184px] opacity-75">
-              <div class="card-info">
-                <div class="card-avatar"></div>
-                <div class="font-mono text-base font-bold text-white">THE GIL OF GAMERS</div>
-                <div class="text-white card-subtitle">ECOMMERCE</div>
-              </div>
-              <ul class="card-social">
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/ECOMMERCE.jpg')" class="bg-center bg-cover card" id="cards">
-            <div class="bg-black h-[248px] w-[184px] opacity-75">
-              <div class="card-info">
-                <div class="card-avatar"></div>
-                <div class="font-mono text-base font-bold text-white">THE GIL OF GAMERS</div>
-                <div class="text-white card-subtitle">ECOMMERCE</div>
-              </div>
-              <ul class="card-social">
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                  </svg>
-                </li>
-                <li class="card-social__item">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                  </svg>
-                </li>
-              </ul>
-            </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/source.jpg')" class="bg-center bg-cover card" id="cards">
-          <div class="bg-black h-[248px] w-[184px] opacity-75">  
-          <div class="card-info">
-              <div class="card-avatar"></div>
-              <div class="font-mono text-base font-bold text-white">DEVGIL PROJECTS</div>
-              <div class="text-white card-subtitle">REFERENCE</div>
-            </div>
-            <ul class="card-social">
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                </svg>
-              </li>
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                </svg>
-              </li>
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                </svg>
-              </li>
-            </ul>
-          </div>
-          </button>
-        </div>
-
-        <div class="flex items-start justify-start">
-          <button style="background-image: url('./dist/public/game.jpg')" class="bg-center bg-cover card" id="cards">
-          <div class="bg-black h-[248px] w-[184px] opacity-75">   
-          <div class="card-info">
-              <div class="card-avatar"></div>
-              <div class="font-mono text-base font-bold text-white">LIVE VIEW</div>
-              <div class="text-white card-subtitle">GAME VIDEO</div>
-            </div>
-            <ul class="card-social">
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 9h3l-.375 3H14v9h-3.89v-9H8V9h2.11V6.984c0-1.312.327-2.304.984-2.976C11.75 3.336 12.844 3 14.375 3H17v3h-1.594c-.594 0-.976.094-1.148.281-.172.188-.258.5-.258.938V9z"></path>
-                </svg>
-              </li>
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.875 7.5v.563c0 3.28-1.18 6.257-3.54 8.93C14.978 19.663 11.845 21 7.938 21c-2.5 0-4.812-.687-6.937-2.063.5.063.86.094 1.078.094 2.094 0 3.969-.656 5.625-1.968a4.563 4.563 0 0 1-2.625-.915 4.294 4.294 0 0 1-1.594-2.226c.375.062.657.094.844.094.313 0 .719-.063 1.219-.188-1.031-.219-1.899-.742-2.602-1.57a4.32 4.32 0 0 1-1.054-2.883c.687.328 1.375.516 2.062.516C2.61 9.016 1.938 7.75 1.938 6.094c0-.782.203-1.531.609-2.25 2.406 2.969 5.515 4.547 9.328 4.734-.063-.219-.094-.562-.094-1.031 0-1.281.438-2.36 1.313-3.234C13.969 3.437 15.047 3 16.328 3s2.375.484 3.281 1.453c.938-.156 1.907-.531 2.907-1.125-.313 1.094-.985 1.938-2.016 2.531.969-.093 1.844-.328 2.625-.703-.563.875-1.312 1.656-2.25 2.344z"></path>
-                </svg>
-              </li>
-              <li class="card-social__item">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.547 3c.406 0 .75.133 1.031.398.281.266.422.602.422 1.008v15.047c0 .406-.14.766-.422 1.078a1.335 1.335 0 0 1-1.031.469h-15c-.406 0-.766-.156-1.078-.469C3.156 20.22 3 19.86 3 19.453V4.406c0-.406.148-.742.445-1.008C3.742 3.133 4.11 3 4.547 3h15zM8.578 18V9.984H6V18h2.578zM7.36 8.766c.407 0 .743-.133 1.008-.399a1.31 1.31 0 0 0 .399-.96c0-.407-.125-.743-.375-1.009C8.14 6.133 7.813 6 7.406 6c-.406 0-.742.133-1.008.398C6.133 6.664 6 7 6 7.406c0 .375.125.696.375.961.25.266.578.399.984.399zM18 18v-4.688c0-1.156-.273-2.03-.82-2.624-.547-.594-1.258-.891-2.133-.891-.938 0-1.719.437-2.344 1.312V9.984h-2.578V18h2.578v-4.547c0-.312.031-.531.094-.656.25-.625.687-.938 1.312-.938.875 0 1.313.578 1.313 1.735V18H18z"></path>
-                </svg>
-              </li>
-            </ul>
-          </div>
-          </button>
-        </div>
-
-      </div>
-      </div>
     </header>
-    
-    
-    
-    
   </div>
-  
-  <!-- home page end  -->
-  
-      <div class="mt-[690px] shadow-2xl">
-        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-          <div class="mr-auto place-self-center lg:col-span-7 delay-[300ms] duration-[600ms] taos:translate-x-[-50px] taos:opacity-0" data-taos-offset="400">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">About Me</h1>
-            <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">I'm Jeril, and I really want to do front-end development. I have experience using HTML, CSS, JavaScript, Tailwind, Laravel, Livewire, Rappasoft PowerGrid, animation, Bootstrap, Figma, and I can also work on network-related tasks.</p>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-              Get started
-              <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-              </svg>
-            </a>
-            <a href="#next" id="downloadButton" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white">
-              Download CV
-            </a>
-            <script>
-              document.getElementById("downloadButton").addEventListener("click", function() {
-                var pdfFile = './public/JERIL RESUME.pdf';
-                var link = document.createElement('a');
-                link.href = pdfFile;
-  
-                link.download = encodeURIComponent('JERIL RESUME.pdf');
-                document.body.appendChild(link);
-                link.click();
-  
-                document.body.removeChild(link);
-              });
-              d
-            </script>
-          </div>
-          <div class="flex pt-2 lg:mt-0 lg:col-span-5 sm:justify-center">
-            <img src="./dist/public/profile.png" class="delay-[300ms] duration-[600ms] taos:translate-x-[50px] taos:opacity-0" data-taos-offset="400">
-          </div>
-        </div>
-            </div>
-  
-
-
-
-
-
-
-
-  <!-- about  -->
-  <div id="about" class="h-full pt-[69px]">
-    <section>
-      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
-        <figure class="max-w-screen-md mx-auto">
-          <blockquote>
-            <p class="text-xl font-normal text-white"> I'm a front end developer with 1 year of experience in web development. I've worked on a variety of projects for clients in the Students. I'm passionate about creating great user experiences and have a strong understanding of usability and accessibility standards.</p>
-        </figure>
-      </div>
-    </section>
-
-    <!-- component -->
-
-    <div class="grid grid-cols-1 md:grid-cols-2 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
-      <div class="">
-        <img class="object-cover object-top h-full " src="./dist/public/seller.jpg" alt="">
-      </div>
-      <div class="flex p-10 bg-gray-100">
-        <div class="max-w-lg mt-auto mb-auto">
-          <h1 class="text-3xl uppercase">Jeril GIl A, Labagnoy</h1>
-          <p class="mb-5 font-semibold">Front-end Developer</p>
-          <p>"Hello, have a nice day! and I offer website development services. You can contact me, and we can discuss and agree on the pricing. I also provide computer repair services. Additionally, I have various technologies for sale, so you can explore them on my websites. Thank you for visiting my portfolio. Feel free to hire me for your job offers."</p>
-          <button class="py-3 mt-6 text-white bg-black rounded-md px-7">Email Me</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex items-center justify-center w-full mb-10 mt-28 profile-skills">
-      <div class="hidden w-4/12 h-52 md:flex sm:flex delay-[300ms] duration-[600ms] taos:[transform:translate3d(-200px,200px,0)] taos:opacity-0" data-taos-offset="300">
-        <p class="font-mono text-lg font-bold text-white">Here, you can see all the progress of my skills. If you have any questions, you can contact me through my email. Thank you.</p>
-      </div>
-      <div class="delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
-        <input type="checkbox" id="sk1">
-        <label for="sk1"></label>
-        <ul class="skills skills1">
-          <li class="sk-cms"><span>CMS</span></li>
-          <li class="sk-dtb"><span>DDBB</span></li>
-          <li class="sk-dis"><span>Design</span></li>
-          <li class="sk-pro"><span>Programing</span></li>
-          <li class="sk-ani"><span>Animation</span></li>
-          <li class="more">
-            <input type="checkbox" id="more-con"><label for="more-con"></label>
-            <div><span>PHOTO</span><span>API</span><span>MAPS</span><span>VIDEO</span><span>CHARTS</span><span>RWD</span></div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
-        <input type="checkbox" id="sk2">
-        <label for="sk2"></label>
-        <ul class="skills skills2">
-          <li class="sk-gim"><span>Gimp</span></li>
-          <li class="sk-ado"><span>Adobe&nbsp;CC</span></li>
-          <li class="sk-not"><span>Notepad++</span></li>
-          <li class="sk-tri"><span>Tridion</span></li>
-          <li class="sk-wor"><span>Wordpress</span></li>
-          <li class="more">
-            <input type="checkbox" id="more-pro"><label for="more-pro"></label>
-            <div><span>JOOMLA</span><span>DRUPAL</span><span>JIRA</span><span>TRELLO</span><span>FILEZILLA</span><span>GIT</span></div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
-        <input type="checkbox" id="sk3">
-        <label for="sk3"></label>
-        <ul class="skills skills3">
-          <li class="sk-css"><span>CSS</span></li>
-          <li class="sk-htm"><span>HTML</span></li>
-          <li class="sk-jav"><span>JS</span></li>
-          <li class="sk-php"><span>PHP</span></li>
-          <li class="sk-sql"><span>SQL</span></li>
-          <li class="more">
-            <input type="checkbox" id="more-len"><label for="more-len"></label>
-            <div><span>XHTML</span><span>XSL</span><span>XML</span><span>JSON</span><span>PUG</span><span>SASS</span></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
-    <script>
-      document.addEventListener('alpine:init', () => {
-        Alpine.data('skillDisplay', () => ({
-          skills: [{
-              'title': 'HTML',
-              'percent': '95',
-            },
-            {
-              'title': 'CSS',
-              'percent': '70',
-            },
-            {
-              'title': 'Tailwind CSS',
-              'percent': '90',
-            },
-            {
-              'title': 'JavaScript',
-              'percent': '70',
-            },
-            {
-              'title': 'Alpine JS',
-              'percent': '80',
-            }, {
-              'title': 'PHP',
-              'percent': '65',
-            }, {
-              'title': 'Laravel',
-              'percent': '75',
-            }
-          ],
-          currentSkill: {
-            'title': 'HTML',
-            'percent': '95',
-          }
-        }));
-      });
-    </script>
-
-  </div>
-
-  <!-- about end  -->
-
-
-  <!-- projects  -->
-  <div id="projects" class="h-full pt-[69px]">
+   <!-- projects  -->
+   <div>
     <section class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
-      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+      <div class="flex items-start justify-start max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
         <div class="max-w-screen-sm mx-auto mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-white">My Projects</h2>
-          <p class="font-light text-white sm:text-xl">Explore the whole collection of my open-source web templates and elements built with the utility classes from Tailwind css javascript laravel structure</p>
+          <h2 class="mb-4 text-4xl font-medium tracking-tight text-white">Video Promotion</h2>
+
+          <!-- 3d animation image  -->
+          <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank">
+  <div class="cardv">
+    <div class="wrapper">
+      <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg" class="cover-image" />
+    </div>
+    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />
+    <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp" class="character" />
+  </div>
+</a>
+
+<a href="https://www.mythrillfiction.com/force-mage" alt="Mythrill" target="_blank">
+  <div class="cardv">
+    <div class="wrapper">
+      <img src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg" class="cover-image" />
+    </div>
+    <img src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png" class="title" />
+    <img src="https://ggayane.github.io/css-experiments/cards/force_mage-character.webp" class="character" />
+  </div>
+</a>
+<style>
+    :root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+* {
+  box-sizing: border-box;
+}
+
+.cardv {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.cardv:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.cardv:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.cardv:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.cardv:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.cardv:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+
+</style>
+<!-- 3d animation image  -->
         </div>
 
-        <div class="grid gap-8 lg:gap-16 sm:grid-rows-2 md:grid-cols-3 lg:grid-cols-4 sm:place-items-center">
+        <div class="grid gap-8 lg:gap-16 sm:grid-rows-2 md:grid-cols-3 lg:grid-cols-3 sm:place-items-center">
           <div class="text-center text-white">
             <div class="main">
               <div class="cardp">
@@ -2016,153 +1683,15 @@ const flashlight = document.querySelector(".flashlight");
 
   <!-- projects end  -->
 
-  <!-- contact  -->
-  <div id="contact" class="h-full pt-[69px]">
-    <section class="">
-      <div class="max-w-screen-md px-4 py-8 mx-auto lg:py-16 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
-        <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-center text-white">Contact Us</h2>
-        <p class="mb-8 font-light text-center text-white lg:mb-16 sm:text-xl">Got a technical issue? Want to send feedback about my websites? Need details? Do you want to hire me Let us know.</p>
-        <form action="#" class="space-y-8">
-          <div>
-            <label for="email" class="block mb-2 text-sm font-medium text-white">Your email</label>
-            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@gmail.com" required>
-          </div>
-          <div>
-            <label for="subject" class="block mb-2 text-sm font-medium text-white">Subject</label>
-            <input type="text" id="subject" class="block w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you" required>
-          </div>
-          <div class="sm:col-span-2">
-            <label for="message" class="block mb-2 text-sm font-medium text-white">Your message</label>
-            <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
-          </div>
-          <button type="submit" class="px-5 py-3 text-sm font-medium text-center text-white bg-red-700 rounded-lg sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
-        </form>
-      </div>
-    </section>
-  </div>
-
-  <!-- contact end  -->
-
-  <!-- gallery -->
-  <div class="h-full py-6 sm:py-8 lg:py-12">
-    <div class="px-4 mx-auto max-w-screen-2xl md:px-8">
-      <div class="flex items-center justify-between gap-8 mb-4 sm:mb-8 md:mb-12">
-        <div class="flex items-center gap-12">
-          <h2 class="text-2xl font-bold text-white lg:text-3xl">Gallery</h2>
-
-          <p class="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
-            Here, you can see all the items I'm selling in my shop. You can sign in to place an order.
-          </p>
-        </div>
-
-        <a href="#" class="inline-block px-4 py-2 text-sm font-semibold text-center text-gray-500 transition duration-100 bg-white border rounded-lg outline-none dark:bg-gray-700 dark:border-none dark:text-gray-200 ring-indigo-300 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">
-          More
-        </a>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-      
-        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-80">
-          <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
-
-          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
-          </div>
-
-          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">VR</span>
-        </a>
-        
-
-        
-        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:col-span-2 md:h-80">
-          <img src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Magicle" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
-
-          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
-          </div>
-
-          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Tech</span>
-        </a>
-       
-
-       
-        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:col-span-2 md:h-80">
-          <img src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Martin Sanchez" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
-
-          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
-          </div>
-
-          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Dev</span>
-        </a>
-        
-
-       
-        <a href="#" class="relative flex items-end h-48 overflow-hidden bg-gray-100 rounded-lg shadow-lg group md:h-80">
-          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute inset-0 object-cover object-center w-full h-full transition duration-200 group-hover:scale-110" />
-
-          <div class="absolute inset-0 opacity-50 pointer-events-none bg-gradient-to-t from-gray-800 via-transparent to-transparent">
-          </div>
-
-          <span class="relative inline-block mb-3 ml-4 text-sm text-white md:ml-5 md:text-lg">Retro</span>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-  <!-- gallery end -->
-
-
-  <!-- ct -->
-  <div class="h-fulltext-white">
-    <div class="container px-4 py-8 mx-auto">
-      <h2 class="mb-8 text-3xl font-semibold text-center text-white">
-        Certificate
-      </h2>
-
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation (1).png" alt="Headless UI" class="object-cover w-full h-64">
-          <div class="p-4 md:p-6">
-            <h3 class="mb-2 text-xl font-semibold text-red-500 dark:text-red-300">Headless UI</h3>
-            <p class="mb-4 text-gray-700 dark:text-gray-300 two-lines">
-              Completely unstyled, fully accessible UI
-              components,
-              designed to integrate beautifully with Tailwind CSS.
-            </p>
-            <a href="#" class="inline-block px-4 py-2 text-white bg-red-500 rounded-full hover:bg-red-600">Learn
-              More</a>
-          </div>
-        </div>
-
-        <div class="overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation (2).png" alt="Heroicons" class="object-cover w-full h-64">
-          <div class="p-4 md:p-6">
-            <h3 class="mb-2 text-xl font-semibold text-red-500 dark:text-red-300">Heroicons</h3>
-            <p class="mb-4 text-gray-700 dark:text-gray-300 two-lines">A set of 450+ free MIT-licensed SVG icons.
-              Available
-              as basic SVG icons and via first-party React and Vue libraries.</p>
-            <a href="#" class="inline-block px-4 py-2 text-white bg-red-500 rounded-full hover:bg-red-600">Learn
-              More</a>
-          </div>
-        </div>
-
-        <div class="overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-          <img src="./dist/public/White Gold Elegant Modern Certificate of Participation.png" alt="Hero Patterns" class="object-cover w-full h-64">
-          <div class="p-4 md:p-6">
-            <h3 class="mb-2 text-xl font-semibold text-red-500 dark:text-red-300">Hero Patterns</h3>
-            <p class="mb-4 text-gray-700 dark:text-gray-300 two-lines">A collection of over 100 free MIT-licensed
-              high-quality
-              SVG patterns for you to use in your web projects.</p>
-            <a href="#" class="inline-block px-4 py-2 text-white bg-red-500 rounded-full hover:bg-red-600">Learn
-              More</a>
-          </div>
-        </div>
 
 
 
-      </div>
-    </div>
-  </div>
-  <!-- ct end -->
 
+
+
+
+
+  
   <footer>
     <div class="max-w-screen-xl px-4 py-5 mx-auto sm:px-6 lg:px-8">
       <div class="lg:flex lg:items-start lg:gap-8">
@@ -2401,9 +1930,5 @@ const flashlight = document.querySelector(".flashlight");
       </div>
     </div>
   </footer>
-
-
 </body>
-<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
-
 </html>

@@ -433,7 +433,7 @@ box-shadow: inset 0px 0px 25px #ff3939;
     border: 3px ridge #ff3939;
     outline: none;
     background-color: transparent;
-    color: black;
+    color: white;
     transition: 1s;
     border-radius: 0.3em;
     font-size: 16px;
@@ -448,7 +448,7 @@ box-shadow: inset 0px 0px 25px #ff3939;
     left: 3%;
     width: 95%;
     height: 20%;
-    background-color: #ffffff;
+    background-color: #000;
     transition: 0.5s;
     transform-origin: center;
   }
@@ -461,7 +461,7 @@ box-shadow: inset 0px 0px 25px #ff3939;
     left: 3%;
     width: 95%;
     height: 20%;
-    background-color: #ffffff;
+    background-color: #000;
     transition: 0.5s;
   }
 
@@ -1066,7 +1066,7 @@ ul.skills li.more input:checked + label:hover {
     flex-direction: column;
     margin-left: 0.5em;
     font-family: Montserrat;
-    color: black;
+    color: white;
   }
 
   .text_m {
