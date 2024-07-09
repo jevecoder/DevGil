@@ -1956,7 +1956,7 @@ ul.skills li.more input:checked + label:hover {
 
 /* The slider */
 
-.slider_738 {
+/* .slider_738 {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -2019,7 +2019,7 @@ ul.skills li.more input:checked + label:hover {
 
 .chk_738:checked + .slider_738:after {
   transform: rotateZ(90deg) rotateY(180deg) translateY(0.45em) translateX(-1.4em);
-}
+} */
 
 /* projects */
 

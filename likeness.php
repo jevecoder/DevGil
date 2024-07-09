@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devgil</title>
+  <link rel="icon" href="./dist/public/logo_profile1.png" type="image/icon type">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script>
+    document.documentElement.classList.add('js')
+  </script>
+  <link href="./dist/output.css" rel="stylesheet">
+  <link href="./dist/src/input.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+  <script src="https://kit.fontawesome.com/25c515add0.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-black">
+  <div id="home">
+    <header class="relative bg-black w-full h-[613px]">
+
+    <style>
+.flashLightContainer {
+  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/content.jfif');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.flashLightContainer::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Adjust height as needed */
+    background: linear-gradient(to top, rgba(0, 0, 0, 2.9), transparent); /* Inner shadow gradient */
+    pointer-events: none; /* Ensures the pseudo-element doesn't block interaction */
+  }
+.flashlight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+    </style>
+    
+    <div class="w-full h-full bg-contain flashLightContainer">
+    <nav class="absolute top-0 left-0 z-20 w-full h-40 text-xs text-gray-400 bg-transparent animate__animated animate__fadeInDown">
+    <div class="grid grid-cols-4 gap-4 p-8">
+      
+    <div>  
+    <a href="http://localhost/DevGil/portfolio.php" class="relative flex items-center gap-2">
+        <img src="./dist/public/logo_profile1.png" class="h-10 w-9 " alt="Flowbite Logo">
+        <span class="absolute mt-3 font-mono text-3xl font-semibold text-white ml-11">Gil{<i class="fa-solid fa-code"></i>}</span>
+        <span class="absolute mt-24 font-sans text-sm font-semibold text-white">World's fastest Web Development.</span>
+      </a>
+    </div>
+
+    <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
+      <p>Services</p>
+      <div class="flex flex-col">
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="plot.php">Plot</a>
+      <a class="text-sm text-white line-through transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Web Design</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
+      <p>Post-Production</p>
+      <div class="flex flex-col">
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="likeness.php">Likeness</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="banner.php">Banner</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
+      <p>Contact</p>
+      <div class="flex flex-col">
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Jerillabagnoy6@gmail.com</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">+63 916-5298-478</a>
+      </div>
+    </div>
+      <!-- Mobile Navigation Button -->
+      <button id="mobileMenuButton" class="md:hidden" onclick="toggleMobileMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      
+
+
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div class="md:hidden" id="mobileMenu" style="display: none;">
+      <ul class="flex flex-col items-center justify-center p-4 mt-4 font-medium border rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#home">Home</a>
+        </li>
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#about">About</a>
+        </li>
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#projects">Projects</a>
+        </li>
+        <li class="hover:text-[#ff3939] text-white">
+          <a href="#contact">Contact</a>
+        </li>
+        <div class="">
+          <button id="buttonlogin">
+            Login
+          </button>
+        </div>
+      </ul>
+    </div>
+
+    <script>
+      function toggleMobileMenu() {
+        var mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.style.display = (mobileMenu.style.display === "none" || mobileMenu.style.display === "") ? "block" : "none";
+      }
+    </script>
+  </nav>
+  <div class="flashlight"></div>
+  
+</div>
+    <script>
+const flashlight = document.querySelector(".flashlight");
+        const container = document.querySelector(".flashLightContainer");
+        const rect = container.getBoundingClientRect();
+
+        container.addEventListener("mousemove", function (e) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Move flashlight effect
+            flashlight.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 100px, #000 500px)`;
+
+            // Parallax effect for background image
+            const moveX = (x - rect.width / 2) * 0.02;
+            const moveY = (y - rect.height / 2) * 0.02;
+            container.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+        });
+    </script>
+
+      <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          // let dots = document.getElementsByClassName("dot"); // I-comment out o tanggalin ito
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1
+          }
+          // I-comment out ang sumusunod na lines
+          /*
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          */
+          slides[slideIndex - 1].style.display = "block";
+          // I-comment out ang sumusunod na line
+          // dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 5000);
+        }
+      </script>
+
+<div class="grid justify-between w-full grid-flow-col grid-cols-3 pr-6 font-sans text-sm font-bold -mt-[317px] animate__animated animate__fadeInUp">
+    <div class="z-10 grid items-start justify-start w-full col-span-3 grid-rows-1 pr-20 font-medium text-gray-200 pt- pl-7">
+    <div class="text-6xl">
+      <p class="text-sm text-[#1ff990]">Latest Design Course</p>
+      <p>Promote your product</p>
+      <p>straight to designers.</p>
+      <p class="mt-6 font-sans text-sm">Devgil’s team will write and film your commercials <br> and share on Youtube You know, commercials for <br> designers by designers.</p>
+     <div class="flex flex-row gap-5 shadow-2xl">
+      <button class="w-[300px] flex item-center justify-center px-6 py-5 mt-7 font-semibold bg-transparent hover-slide1">
+        <span class="text-sm font-medium">hey@Devgil.com</span>
+    </button>
+    <p class="flex items-center justify-center text-sm pt-7">Cost: ₱1,000 - ₱5,000</p>
+  </div>
+    </div>
+    </div>
+    
+    <div></div>
+    <div></div>
+
+    <style>
+      .hover-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Tailwind's blue-500 */
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.hover-slide:hover::before {
+  left: 0;
+}
+
+.hover-slide {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-color: black;
+}
+.hover-slide:hover {
+  color: black;
+}
+
+.hover-slide span {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* button2 */
+.hover-slide1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #1ff990;
+  transition: left 1.0s ease;
+  z-index: 0;
+}
+
+.hover-slide1:hover::before {
+  left: 0;
+}
+
+.hover-slide1 {
+  position: relative;
+  overflow: hidden;
+  color: black;
+  background-color: white;
+}
+.hover-slide1:hover {
+  color: black;
+}
+
+.hover-slide1 span {
+  position: relative;
+  z-index: 10;
+}
+    </style>
+
+    </div>
+    </header>
+</div>
+
+
+<!-- gallery  -->
+<div class="container mt-20">
+  <div class="card-column column-0">
+    <div class="card card-color-0">
+      <div class="border"></div>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-00.jpg" />
+      <h1>Hey now, you're an allstar</h1>
+    </div>
+    <div class="card card-color-2">
+      <div class="border"></div>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-02.jpg" />
+      <h1>Hey now, you're a rock star</h1>
+    </div>
+  </div>
+  <div class="card-column column-1">
+    <div class="card card-color-1">
+      <div class="border"></div>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-01.jpg" />
+      <h1>Get your game on, go play</h1>
+    </div>
+    <div class="card card-color-3">
+      <div class="border"></div>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-03.jpg" />
+      <h1>Get the show on, get paid</h1>
+    </div>
+  </div>
+</div>
+
+<div id="cover" class="cover"></div>
+
+<div id="open-content" class="open-content">
+  <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+  <img id="open-content-image" src="" />
+  <div class="text" id="open-content-text">
+  </div>
+</div>
+
+
+<style>
+
+/* .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; 
+} */
+    p {
+  line-height: 1.5;
+}
+
+/* Cards */
+.card-column {
+  width: 50%;
+  float: left;
+  padding: 4%;
+  box-sizing: border-box;
+}
+
+.column-1 {
+  padding-top: 100px;
+}
+
+.card {
+  width: 92%;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background: #EB5160;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+.border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  border: 1px solid #fff;
+  opacity: 0.5;
+  left: -6px;
+  top: -6px;
+}
+
+.card h1 {
+  position: relative;
+  padding: 190px 0px 100px 10px;
+  width: 90%;
+}
+
+.card > img {
+  width: 90%;
+  position: absolute;
+  top: -6%;
+  left: -6%;
+}
+
+.card-color-0 {
+  background-color: #000;
+}
+
+.card-color-1 {
+  background-color: #8F3985;
+}
+
+.card-color-2 {
+  background-color: #8DAA91;
+}
+
+.card-color-3 {
+  background-color: #888DA7;
+}
+
+/* The cover (expanding background) */
+.cover {
+  position: fixed;
+  background: #EB5160;
+  z-index: 100;
+  transform-origin: 50% 50%;
+}
+
+/* The open page content */
+.open-content {
+  width: 100%;
+  z-index: 110;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.open-content img {
+  position: relative;
+  width: 90%;
+  margin-left: 3%;
+  margin-top: 20px;
+  z-index: 5;
+}
+
+.open-content .text {
+  background: #fff;
+  margin-top: -56%;
+  padding: 60% 5% 5% 5%;
+  width: 80%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.open-content .text h1, .open-content .text p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close-content {
+  display: block;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 30px;
+  height: 30px;
+}
+
+.close-content span {
+  background: #222;
+  width: 30px;
+  height: 6px;
+  display: block;
+  position: absolute;
+  top: 14px;
+}
+
+.x-1 {
+  transform: rotate(45deg);
+}
+
+.x-2 {
+  transform: rotate(-45deg);
+}
+
+/* 
+** Transitions
+*/
+
+.card {
+  transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms;
+}
+
+.border {
+  transition: opacity 200ms linear, transform 200ms ease-out;
+}
+
+.card img {
+  transition: opacity 200ms linear 0ms, transform 200ms ease-in 0ms;
+}
+
+.card h1 {
+  transform: translate3d(20%, 0px, 0px);  
+  transition: opacity 200ms linear 120ms, transform 200ms ease-in 120ms;
+}
+
+/* Clicked card */
+.card.clicked img {
+  transform: translate3d(0px, -40px, 0px);
+  opacity: 0;
+}
+
+.card.clicked .border {
+  opacity: 0;
+  transform: scale(1.3);
+}
+
+.card.out, .card.out img {
+  transform: translate3d(0px, -40px, 0px);
+  opacity: 0;
+}
+
+.card.out h1, .card.clicked h1 {
+  transform: translate3d(20%, -40px, 0px);
+  opacity: 0;
+}
+
+.cover {
+  transition: transform 300ms ease-in-out;
+}
+
+.open-content {
+  transition: opacity 200ms linear 0ms;
+}
+
+.open-content.open {
+  opacity: 1;
+  pointer-events: all;
+  transition-delay: 1000ms;
+}
+
+/* 
+** Media Queries
+*/
+
+@media screen and (max-width: 600px) {
+  .card-column {
+    width: 90%;
+  }
+  
+  .column-1 {
+    padding-top: 0px;
+  }
+  
+  .open-content img {
+    margin-top: 40px;
+  }
+}
+</style>
+
+
+<script>
+    // listing vars here so they're in the global scope
+var cards, nCards, cover, openContent, openContentText, pageIsOpen = false,
+    openContentImage, closeContent, windowWidth, windowHeight, currentCard;
+
+// initiate the process
+init();
+
+function init() {
+  resize();
+  selectElements();
+  attachListeners();
+}
+
+// select all the elements in the DOM that are going to be used
+function selectElements() {
+  cards = document.getElementsByClassName('card'),
+  nCards = cards.length,
+  cover = document.getElementById('cover'),
+  openContent = document.getElementById('open-content'),
+  openContentText = document.getElementById('open-content-text'),
+  openContentImage = document.getElementById('open-content-image')
+  closeContent = document.getElementById('close-content');
+}
+
+/* Attaching three event listeners here:
+  - a click event listener for each card
+  - a click event listener to the close button
+  - a resize event listener on the window
+*/
+function attachListeners() {
+  for (var i = 0; i < nCards; i++) {
+    attachListenerToCard(i);
+  }
+  closeContent.addEventListener('click', onCloseClick);
+  window.addEventListener('resize', resize);
+}
+
+function attachListenerToCard(i) {
+  cards[i].addEventListener('click', function(e) {
+    var card = getCardElement(e.target);
+    onCardClick(card, i);
+  })
+}
+
+/* When a card is clicked */
+function onCardClick(card, i) {
+  // set the current card
+  currentCard = card;
+  // add the 'clicked' class to the card, so it animates out
+  currentCard.className += ' clicked';
+  // animate the card 'cover' after a 500ms delay
+  setTimeout(function() {animateCoverUp(currentCard)}, 500);
+  // animate out the other cards
+  animateOtherCards(currentCard, true);
+  // add the open class to the page content
+  openContent.className += ' open';
+}
+
+/*
+* This effect is created by taking a separate 'cover' div, placing
+* it in the same position as the clicked card, and animating it to
+* become the background of the opened 'page'.
+* It looks like the card itself is animating in to the background,
+* but doing it this way is more performant (because the cover div is
+* absolutely positioned and has no children), and there's just less
+* having to deal with z-index and other elements in the card
+*/
+function animateCoverUp(card) {
+  // get the position of the clicked card
+  var cardPosition = card.getBoundingClientRect();
+  // get the style of the clicked card
+  var cardStyle = getComputedStyle(card);
+  setCoverPosition(cardPosition);
+  setCoverColor(cardStyle);
+  scaleCoverToFillWindow(cardPosition);
+  // update the content of the opened page
+  openContentText.innerHTML = '<h1>'+card.children[2].textContent+'</h1>'+paragraphText;
+  openContentImage.src = card.children[1].src;
+  setTimeout(function() {
+    // update the scroll position to 0 (so it is at the top of the 'opened' page)
+    window.scroll(0, 0);
+    // set page to open
+    pageIsOpen = true;
+  }, 300);
+}
+
+function animateCoverBack(card) {
+  var cardPosition = card.getBoundingClientRect();
+  // the original card may be in a different position, because of scrolling, so the cover position needs to be reset before scaling back down
+  setCoverPosition(cardPosition);
+  scaleCoverToFillWindow(cardPosition);
+  // animate scale back to the card size and position
+  cover.style.transform = 'scaleX('+1+') scaleY('+1+') translate3d('+(0)+'px, '+(0)+'px, 0px)';
+  setTimeout(function() {
+    // set content back to empty
+    openContentText.innerHTML = '';
+    openContentImage.src = '';
+    // style the cover to 0x0 so it is hidden
+    cover.style.width = '0px';
+    cover.style.height = '0px';
+    pageIsOpen = false;
+    // remove the clicked class so the card animates back in
+    currentCard.className = currentCard.className.replace(' clicked', '');
+  }, 301);
+}
+
+function setCoverPosition(cardPosition) {
+  // style the cover so it is in exactly the same position as the card
+  cover.style.left = cardPosition.left + 'px';
+  cover.style.top = cardPosition.top + 'px';
+  cover.style.width = cardPosition.width + 'px';
+  cover.style.height = cardPosition.height + 'px';
+}
+
+function setCoverColor(cardStyle) {
+  // style the cover to be the same color as the card
+  cover.style.backgroundColor = cardStyle.backgroundColor;
+}
+
+function scaleCoverToFillWindow(cardPosition) {
+  // calculate the scale and position for the card to fill the page,
+  var scaleX = windowWidth / cardPosition.width;
+  var scaleY = windowHeight / cardPosition.height;
+  var offsetX = (windowWidth / 2 - cardPosition.width / 2 - cardPosition.left) / scaleX;
+  var offsetY = (windowHeight / 2 - cardPosition.height / 2 - cardPosition.top) / scaleY;
+  // set the transform on the cover - it will animate because of the transition set on it in the CSS
+  cover.style.transform = 'scaleX('+scaleX+') scaleY('+scaleY+') translate3d('+(offsetX)+'px, '+(offsetY)+'px, 0px)';
+}
+
+/* When the close is clicked */
+function onCloseClick() {
+  // remove the open class so the page content animates out
+  openContent.className = openContent.className.replace(' open', '');
+  // animate the cover back to the original position card and size
+  animateCoverBack(currentCard);
+  // animate in other cards
+  animateOtherCards(currentCard, false);
+}
+
+function animateOtherCards(card, out) {
+  var delay = 100;
+  for (var i = 0; i < nCards; i++) {
+    // animate cards on a stagger, 1 each 100ms
+    if (cards[i] === card) continue;
+    if (out) animateOutCard(cards[i], delay);
+    else animateInCard(cards[i], delay);
+    delay += 100;
+  }
+}
+
+// animations on individual cards (by adding/removing card names)
+function animateOutCard(card, delay) {
+  setTimeout(function() {
+    card.className += ' out';
+   }, delay);
+}
+
+function animateInCard(card, delay) {
+  setTimeout(function() {
+    card.className = card.className.replace(' out', '');
+  }, delay);
+}
+
+// this function searches up the DOM tree until it reaches the card element that has been clicked
+function getCardElement(el) {
+  if (el.className.indexOf('card ') > -1) return el;
+  else return getCardElement(el.parentElement);
+}
+
+// resize function - records the window width and height
+function resize() {
+  if (pageIsOpen) {
+    // update position of cover
+    var cardPosition = currentCard.getBoundingClientRect();
+    setCoverPosition(cardPosition);
+    scaleCoverToFillWindow(cardPosition);
+  }
+  windowWidth = window.innerWidth;
+  windowHeight = window.innerHeight;
+}
+
+var paragraphText = '<p>Somebody once told me the world is gonna roll me. I ain\'t the sharpest tool in the shed. She was looking kind of dumb with her finger and her thumb in the shape of an "L" on her forehead. Well the years start coming and they don\'t stop coming. Fed to the rules and I hit the ground running. Didn\'t make sense not to live for fun. Your brain gets smart but your head gets dumb. So much to do, so much to see. So what\'s wrong with taking the back streets? You\'ll never know if you don\'t go. You\'ll never shine if you don\'t glow.</p><p>Hey now, you\'re an all-star, get your game on, go play. Hey now, you\'re a rock star, get the show on, get paid. And all that glitters is gold. Only shooting stars break the mold.</p><p>It\'s a cool place and they say it gets colder. You\'re bundled up now, wait till you get older. But the meteor men beg to differ. Judging by the hole in the satellite picture. The ice we skate is getting pretty thin. The water\'s getting warm so you might as well swim. My world\'s on fire, how about yours? That\'s the way I like it and I never get bored.</p>';
+</script>
+<!-- gallery  -->
+
+
+  <footer>
+    <div class="max-w-screen-xl px-4 py-5 mx-auto sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-start lg:gap-8">
+        <div>
+          <img class="h-auto w-52" src="./dist/public/LOGO.png" alt="">
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 mt-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+          <div class="col-span-2">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-100">
+                Get the latest news!
+              </h2>
+
+              <p class="mt-4 text-gray-100">
+                You can Contact me!
+              </p>
+            </div>
+          </div>
+
+          <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-gray-100">Services</p>
+
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  1on1 Coaching
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Company Review
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Accounts Review
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  HR Consulting
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  SEO Optimisation
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-gray-100">Company</p>
+
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Meet the Team
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Accounts Review
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-gray-100">Helpful Links</p>
+
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Contact
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  FAQs
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Live Chat
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-gray-100">Legal</p>
+
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Accessibility
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Returns Policy
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Refund Policy
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Hiring Statistics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-gray-100">Downloads</p>
+
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  Marketing Calendar
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                  SEO Infographics
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="flex justify-start col-span-2 gap-6 lg:col-span-5 lg:justify-end">
+            <li>
+              <a href="/" rel="noreferrer" target="_blank" class="text-red-900 transition hover:opacity-75">
+                <span class="sr-only">Facebook</span>
+
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="/" rel="noreferrer" target="_blank" class="text-red-900 transition hover:opacity-75">
+                <span class="sr-only">Instagram</span>
+
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="/" rel="noreferrer" target="_blank" class="text-red-900 transition hover:opacity-75">
+                <span class="sr-only">Twitter</span>
+
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="/" rel="noreferrer" target="_blank" class="text-red-900 transition hover:opacity-75">
+                <span class="sr-only">GitHub</span>
+
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="/" rel="noreferrer" target="_blank" class="text-red-900 transition hover:opacity-75">
+                <span class="sr-only">Dribbble</span>
+
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 mt-8 border-t border-gray-100">
+        <div class="sm:flex sm:justify-between">
+          <p class="text-xs text-gray-100">
+            &copy; 2024. Devgil. All rights reserved.
+          </p>
+
+          <ul class="flex flex-wrap justify-start gap-4 mt-8 text-xs sm:mt-0 lg:justify-end">
+            <li>
+              <a href="#" class="text-gray-100 transition hover:opacity-75">
+                Terms & Conditions
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-100 transition hover:opacity-75">
+                Privacy Policy
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="text-gray-100 transition hover:opacity-75">
+                Cookies
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -58,7 +58,7 @@
     <div class="grid grid-cols-4 gap-4 p-8">
       
     <div>  
-    <a href="" class="relative flex items-center gap-2">
+    <a href="http://localhost/DevGil/portfolio.php" class="relative flex items-center gap-2">
         <img src="./dist/public/logo_profile1.png" class="h-10 w-9 " alt="Flowbite Logo">
         <span class="absolute mt-3 font-mono text-3xl font-semibold text-white ml-11">Gil{<i class="fa-solid fa-code"></i>}</span>
         <span class="absolute mt-24 font-sans text-sm font-semibold text-white">World's fastest Web Development.</span>
@@ -68,16 +68,16 @@
     <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
       <p>Services</p>
       <div class="flex flex-col">
-      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="projects.php">Design Commercial</a>
-      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Web Design</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="plot.php">Plot</a>
+      <a class="text-sm text-white line-through transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Web Design</a>
       </div>
     </div>
 
     <div class="flex flex-col items-start justify-between font-sans font-normal gap-9">
-      <p>Education</p>
+      <p>Post-Production</p>
       <div class="flex flex-col">
-      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Courses</a>
-      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="">Portfolio Reviews</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="likeness.php">Likeness</a>
+      <a class="text-sm text-white transition duration-300 ease-out hover:ease-in hover:-translate-y-1 hover:scale-110" href="banner.php">Banner</a>
       </div>
     </div>
 
@@ -184,10 +184,10 @@ const flashlight = document.querySelector(".flashlight");
       <p class="text-sm text-[#1ff990]">Latest Design Course</p>
       <p>Promote your product</p>
       <p>straight to designers.</p>
-      <p class="mt-6 font-sans text-sm">Dann’s team will write and film your commercials <br> and share on X. You know, commercials for <br> designers by designers.</p>
+      <p class="mt-6 font-sans text-sm">Devgil’s team will write and film your commercials <br> and share on Youtube You know, commercials for <br> designers by designers.</p>
      <div class="flex flex-row gap-5 shadow-2xl">
       <button class="w-[300px] flex item-center justify-center px-6 py-5 mt-7 font-semibold bg-transparent hover-slide1">
-        <span class="text-sm font-medium">View the Course</span>
+        <span class="text-sm font-medium">hey@Devgil.com</span>
     </button>
     <p class="flex items-center justify-center text-sm pt-7">Cost: ₱1,000 - ₱5,000</p>
   </div>
@@ -264,10 +264,7 @@ const flashlight = document.querySelector(".flashlight");
     </style>
 
     </div>
-  </div>
 
-    
-  </div>
     </header>
   </div>
    <!-- projects  -->
@@ -275,7 +272,7 @@ const flashlight = document.querySelector(".flashlight");
     <section class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
       <div class="flex items-start justify-start max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
         <div class="max-w-screen-sm mx-auto mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl font-medium tracking-tight text-white">Video Promotion</h2>
+          <h2 class="mb-4 text-4xl font-medium tracking-tight text-white">My Plot</h2>
 
           <!-- 3d animation image  -->
           <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank">
@@ -403,9 +400,10 @@ const flashlight = document.querySelector(".flashlight");
         </div>
 
         <div class="grid gap-8 lg:gap-16 sm:grid-rows-2 md:grid-cols-3 lg:grid-cols-3 sm:place-items-center">
+            <a href="./my_plot/tip_calculator.html">
           <div class="text-center text-white">
             <div class="main">
-              <div class="cardp">
+              <div class="bg-cover cardp" style="background-image: url('./dist/public/tip_caalculator.png');">
                 <div class="fl">
                   <div class="fullscreen">
                     <svg viewBox="0 0 100 100" class="fullscreen_svg">
@@ -416,7 +414,7 @@ const flashlight = document.querySelector(".flashlight");
                 <div class="card_content">
                   <label class="switch_738">
                     <input type="checkbox" class="chk_738">
-                    <span class="slider_738"></span>
+                    <!-- <span class="slider_738"></span> -->
                   </label>
                 </div>
                 <div class="card_back"></div>
@@ -633,8 +631,8 @@ const flashlight = document.querySelector(".flashlight");
                   </svg>
                 </div>
                 <div class="textp">
-                  <div class="text_m">CSS Theme Switch</div>
-                  <div class="text_s">Praashoo7</div>
+                  <div class="text_m">Tip Calculator</div>
+                  <div class="text_s">Devgil</div>
                 </div>
               </div>
               <div class="btns">
@@ -656,6 +654,7 @@ const flashlight = document.querySelector(".flashlight");
               </div>
             </div>
           </div>
+            </a>
 
           <!-- box 2  -->
           <div class="text-center text-gray-500 dark:text-gray-400">
@@ -1678,6 +1677,7 @@ const flashlight = document.querySelector(".flashlight");
           </div>
 
         </div>
+      </div>
     </section>
   </div>
 
