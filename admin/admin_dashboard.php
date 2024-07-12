@@ -34,17 +34,17 @@ if (isset($_SESSION['role'])) {
   <script src="../js/script.js"></script>
 </head>
 
-<body>
+<body class="">
 <?php
 include '../admin/navigation.php';
 ?>
-  <div class="h-screen flex flex-row flex-wrap">
+  <div class="flex flex-row flex-wrap h-screen">
   <?php
   include '../admin/sidebar.php';
   ?>
 
   <!-- start content -->
-   <div class="bg-gray-100 flex-1 p-6">
+   <div class="flex-1 p-6 bg-gray-100">
 
 
    <!-- grid 1 -->
@@ -52,27 +52,27 @@ include '../admin/navigation.php';
 
    <!-- card 1 -->
    <div class="report-card"><a href="./user_management.php">
-    <div class="card border-gray-200 border cursor-pointer bg-white w-60 h-auto rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:shadow-xl duration-300">
-      <div class="card-body flex flex-col">
+    <div class="h-auto transition duration-300 ease-in-out delay-150 bg-white border border-gray-200 rounded-md cursor-pointer card w-60 hover:-translate-y-1 hover:scale-100 hover:shadow-xl">
+      <div class="flex flex-col card-body">
         <!-- top -->
-        <div class="flex p-6 flex-row justify-between items-center">
+        <div class="flex flex-row items-center justify-between p-6">
           <div class="text-xl text-indigo-700 fa-solid fa-user"></div>
           <span class="rounded-full px-[7px] py-[2px] text-white badge h6 bg-teal-400">
             12%
-            <i class="fa fa-chevron-up ml-1"></i>
+            <i class="ml-1 fa fa-chevron-up"></i>
           </span>
         </div>
         <!-- end top -->
 
         <!-- bottom -->
         <div class="p-6">
-          <h1 class="font-bold text-2xl"><?php echo $totalUsers; ?></h1>
+          <h1 class="text-2xl font-bold"><?php echo $totalUsers; ?></h1>
           <p class="text-gray-400">Total Of Users</p>
         </div>
         <!-- end bottom -->
       </div>
     </div>
-    <div class="footera bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none transition ease-in-out delay-100 hover:shadow-2xl duration-300"></div>
+    <div class="p-1 mx-4 transition duration-300 ease-in-out delay-100 bg-white border border-t-0 rounded rounded-t-none footera hover:shadow-2xl"></div>
   </a>
 </div>
   <style>
@@ -84,27 +84,27 @@ include '../admin/navigation.php';
 
       <!-- card 1 -->
       <div class="report-card">
-    <div class="card border-gray-200 border bg-white w-60 h-auto rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:shadow-xl duration-300">
-      <div class="card-body flex flex-col">
+    <div class="h-auto transition duration-300 ease-in-out delay-150 bg-white border border-gray-200 rounded-md card w-60 hover:-translate-y-1 hover:scale-100 hover:shadow-xl">
+      <div class="flex flex-col card-body">
         <!-- top -->
-        <div class="flex p-6 flex-row justify-between items-center">
+        <div class="flex flex-row items-center justify-between p-6">
           <div class="text-xl text-indigo-700 fa-solid fa-user"></div>
           <span class="rounded-full px-[7px] py-[2px] text-white badge h6 bg-teal-400">
             12%
-            <i class="fa fa-chevron-up ml-1"></i>
+            <i class="ml-1 fa fa-chevron-up"></i>
           </span>
         </div>
         <!-- end top -->
 
         <!-- bottom -->
         <div class="p-6">
-          <h1 class="font-bold text-2xl">10233</h1>
+          <h1 class="text-2xl font-bold">10233</h1>
           <p class="text-gray-400">Items Sales</p>
         </div>
         <!-- end bottom -->
       </div>
     </div>
-    <div class="footera bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none transition ease-in-out delay-100 hover:shadow-2xl duration-300"></div>
+    <div class="p-1 mx-4 transition duration-300 ease-in-out delay-100 bg-white border border-t-0 rounded rounded-t-none footera hover:shadow-2xl"></div>
   </div>
   <style>
     .card:hover + .footera {
@@ -115,27 +115,27 @@ include '../admin/navigation.php';
 
       <!-- card 1 -->
       <div class="report-card">
-    <div class="card border-gray-200 border bg-white w-60 h-auto rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:shadow-xl duration-300">
-      <div class="card-body flex flex-col">
+    <div class="h-auto transition duration-300 ease-in-out delay-150 bg-white border border-gray-200 rounded-md card w-60 hover:-translate-y-1 hover:scale-100 hover:shadow-xl">
+      <div class="flex flex-col card-body">
         <!-- top -->
-        <div class="flex p-6 flex-row justify-between items-center">
+        <div class="flex flex-row items-center justify-between p-6">
           <div class="text-xl text-indigo-700 fa-solid fa-user"></div>
           <span class="rounded-full px-[7px] py-[2px] text-white badge h6 bg-teal-400">
             12%
-            <i class="fa fa-chevron-up ml-1"></i>
+            <i class="ml-1 fa fa-chevron-up"></i>
           </span>
         </div>
         <!-- end top -->
 
         <!-- bottom -->
         <div class="p-6">
-          <h1 class="font-bold text-2xl">10233</h1>
+          <h1 class="text-2xl font-bold">10233</h1>
           <p class="text-gray-400">Items Sales</p>
         </div>
         <!-- end bottom -->
       </div>
     </div>
-    <div class="footera bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none transition ease-in-out delay-100 hover:shadow-2xl duration-300"></div>
+    <div class="p-1 mx-4 transition duration-300 ease-in-out delay-100 bg-white border border-t-0 rounded rounded-t-none footera hover:shadow-2xl"></div>
   </div>
   <style>
     .card:hover + .footera {
@@ -146,27 +146,27 @@ include '../admin/navigation.php';
 
       <!-- card 1 -->
       <div class="report-card">
-    <div class="card border-gray-200 border bg-white w-60 h-auto rounded-md transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:shadow-xl duration-300">
-      <div class="card-body flex flex-col">
+    <div class="h-auto transition duration-300 ease-in-out delay-150 bg-white border border-gray-200 rounded-md card w-60 hover:-translate-y-1 hover:scale-100 hover:shadow-xl">
+      <div class="flex flex-col card-body">
         <!-- top -->
-        <div class="flex p-6 flex-row justify-between items-center">
+        <div class="flex flex-row items-center justify-between p-6">
           <div class="text-xl text-indigo-700 fa-solid fa-user"></div>
           <span class="rounded-full px-[7px] py-[2px] text-white badge h6 bg-teal-400">
             12%
-            <i class="fa fa-chevron-up ml-1"></i>
+            <i class="ml-1 fa fa-chevron-up"></i>
           </span>
         </div>
         <!-- end top -->
 
         <!-- bottom -->
         <div class="p-6">
-          <h1 class="font-bold text-2xl">10233</h1>
+          <h1 class="text-2xl font-bold">10233</h1>
           <p class="text-gray-400">Items Sales</p>
         </div>
         <!-- end bottom -->
       </div>
     </div>
-    <div class="footera bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none transition ease-in-out delay-100 hover:shadow-2xl duration-300"></div>
+    <div class="p-1 mx-4 transition duration-300 ease-in-out delay-100 bg-white border border-t-0 rounded rounded-t-none footera hover:shadow-2xl"></div>
   </div>
   <style>
     .card:hover + .footera {

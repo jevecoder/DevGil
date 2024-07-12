@@ -181,10 +181,10 @@ const flashlight = document.querySelector(".flashlight");
 <div class="grid justify-between w-full grid-flow-col grid-cols-3 pr-6 font-sans text-sm font-bold -mt-[317px] animate__animated animate__fadeInUp">
     <div class="z-10 grid items-start justify-start w-full col-span-3 grid-rows-1 pr-20 font-medium text-gray-200 pt- pl-7">
     <div class="text-6xl">
-      <p class="text-sm text-[#1ff990]">Latest Design Course</p>
+      <p class="text-sm text-[#1ff990]">Latest Design Banner</p>
       <p>Promote your product</p>
       <p>straight to designers.</p>
-      <p class="mt-6 font-sans text-sm">Devgil’s team will write and film your commercials <br> and share on Youtube You know, commercials for <br> designers by designers.</p>
+      <p class="mt-6 font-sans text-sm">Devgil’s team will write and film your Stream <br> and share on Youtube You know, Streamers for <br> designers by designers.</p>
      <div class="flex flex-row gap-5 shadow-2xl">
       <button class="w-[300px] flex item-center justify-center px-6 py-5 mt-7 font-semibold bg-transparent hover-slide1">
         <span class="text-sm font-medium">hey@Devgil.com</span>
@@ -272,7 +272,7 @@ const flashlight = document.querySelector(".flashlight");
     <section class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
       <div class="flex items-start justify-start max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
         <div class="max-w-screen-sm mx-auto mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl font-medium tracking-tight text-white">Video Promotion</h2>
+          <h2 class="mb-4 text-4xl font-medium tracking-tight text-white">Streaming</h2>
 
           <!-- 3d animation image  -->
           <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank">
@@ -403,7 +403,7 @@ const flashlight = document.querySelector(".flashlight");
         <a href="banner_watch.php">
           <div class="text-center text-white">
             <div class="main">
-              <div class="cardp">
+            <div class="bg-cover cardp" style="background-image: url('./dist/public/maxresdefault.webp');">
                 <div class="fl">
                   <div class="fullscreen">
                     <svg viewBox="0 0 100 100" class="fullscreen_svg">
@@ -415,7 +415,7 @@ const flashlight = document.querySelector(".flashlight");
                   
                   <label class="switch_738">
                     <input type="checkbox" class="chk_738">
-                    <span class="slider_738"></span>
+                    <!-- <span class="slider_738"></span> -->
                   </label>
                 
                 </div>
@@ -632,9 +632,9 @@ const flashlight = document.querySelector(".flashlight");
                         Z"></path>
                   </svg>
                 </div>
-                <div class="textp">
-                  <div class="text_m">CSS Theme Switch</div>
-                  <div class="text_s">Praashoo7</div>
+                <div class="overflow-hidden w-44 textp text-clip">
+                  <div class="text_m">https://www.youtube.com/embed/H_X13Mk_3tI</div>
+                  <div class="text_s">The Gil Of Gamers yt</div>
                 </div>
               </div>
               <div class="btns">

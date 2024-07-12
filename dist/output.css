@@ -1144,7 +1144,7 @@ button login */
 
 /* progressbar */
 
-:root {
+/* :root {
   --c1: #2187e7;
   --b2: #222;
   --b3: #333;
@@ -1380,7 +1380,6 @@ ul.skills li span:after {
   top: 38px;
   transition: var(--t1);
   counter-reset: percent var(--per);
-  /*content: counter(percent) "%";*/
   content: counter(percent);
   color: var(--b2);
   opacity: 1 !important;
@@ -1405,7 +1404,7 @@ ul.skills2 li:hover span:after {
 
 ul.skills3 li:hover span:after {
   background: #ff4500;
-}
+} */
 
 /*********************/
 
@@ -1413,7 +1412,7 @@ ul.skills3 li:hover span:after {
 
 /*********************/
 
-ul.skills li.sk-ani {
+/* ul.skills li.sk-ani {
   --per: 85;
 }
 
@@ -1483,7 +1482,7 @@ ul.skills li.sk-sql {
 
 ul.skills li.sk-pug {
   --per: 40;
-}
+} */
 
 /*********************/
 
@@ -1491,7 +1490,7 @@ ul.skills li.sk-pug {
 
 /*********************/
 
-.profile-skills input {
+/* .profile-skills input {
   display: none;
 }
 
@@ -1554,11 +1553,10 @@ ul.skills li.sk-pug {
 }
 
 label[for="sk1"] {
-  /*left: -10px;*/
 }
 
 label[for="sk2"] {
-  /*left: calc(34% - 6px);*/
+
 }
 
 label[for="sk1"]:before {
@@ -1571,7 +1569,7 @@ label[for="sk2"]:before {
 
 label[for="sk3"]:before {
   border-color: orangered;
-}
+} */
 
 /*********************/
 
@@ -1579,7 +1577,7 @@ label[for="sk3"]:before {
 
 /*********************/
 
-ul.skills li.more {
+/* ul.skills li.more {
   padding: 0;
   margin-bottom: 20px;
 }
@@ -1704,7 +1702,7 @@ ul.skills li.more input:checked + label:hover {
     width: 98% !important;
     margin-top: 120px;
   }
-}
+} */
 
 /* progress bare */
 
@@ -2230,3 +2228,75 @@ ul.skills li.more input:checked + label:hover {
     }
   }
 }
+
+
+/* about me  */
+.bordera {
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+}
+
+.bordera:hover {
+  border: 1px solid white;
+}
+
+.carda {
+  height: 379px;
+  width: 300px;
+  background: grey;
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 70px 63px -60px #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carda.carda1 {
+  background: url('./public/profile.png') center center no-repeat;
+  background-size: 300px;
+}
+
+.carda.carda1:hover {
+  background: url('./public/profile.png') left center no-repeat;
+  background-size: 600px;
+}
+
+.carda.carda1:hover h2,
+.carda.carda1:hover .fa {
+  opacity: 1;
+}
+
+h2 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: white;
+  margin: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fa {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.icons {
+  position: absolute;
+  fill: #fff;
+  color: #fff;
+  height: 130px;
+  top: 226px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+/* about me  */

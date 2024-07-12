@@ -403,24 +403,6 @@ const flashlight = document.querySelector(".flashlight");
 
 
 <div>
-<!-- search  -->
-        <div class="mx-4 my-6 header">
-        <div class="flex items-center justify-between tool">
-            <div class="flex items-center left">
-                <i class="p-2 material-icons md-18 icon">menu</i>
-            </div>
-            <div class="mid">
-                <input class="px-3 py-1 border rounded-lg searchBar" type="text" placeholder="Search Here!">
-            </div>
-            <div class="flex items-center text-white right">
-                <i class="p-2 material-icons md-18 icon">video_call</i>
-                <i class="p-2 material-icons md-18 icon">apps</i>
-                <i class="p-2 material-icons md-18 icon">notifications</i>
-                <i class="p-2 material-icons md-18 icon">account_circle</i>
-            </div>
-        </div>
-    </div>
-<!-- search  -->
 
     <!-- video  -->
     <div class="flex flex-col mx-4 my-6">

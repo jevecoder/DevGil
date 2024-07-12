@@ -46,4 +46,5 @@ if ($result->num_rows > 0) {
     $totalUsers = $row['total_users'];
 }
 
+
 ?>

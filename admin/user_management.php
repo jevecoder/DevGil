@@ -52,18 +52,18 @@ if (isset($_SESSION['email'])) {
 <?php
 include '../admin/navigation.php';
 ?>
-<div class="h-screen flex flex-row flex-wrap">
+<div class="flex flex-row flex-wrap h-screen">
 <?php
 include '../admin/sidebar.php';
 ?>
 
 
  <!-- start content -->
- <div class="bg-gray-100 flex-1 p-6">
+ <div class="flex-1 p-6 bg-gray-100">
 
  <button type="button" class="mb-4 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"><a href="./create_user.php">create</a></button>
  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
@@ -84,7 +84,7 @@ include '../admin/sidebar.php';
             <?php
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr class='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
+                    echo "<tr class='border-b odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 dark:border-gray-700'>
                             <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                                 " . $row["id"] . "
                             </th>
@@ -96,12 +96,12 @@ include '../admin/sidebar.php';
                             </td>
                             <td class='px-6 py-4'>
                                 <a href='edit_user.php?id=" . $row["id"] . "' class='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Edit</a>
-                                <a href='delete_user.php?id=" . $row["id"] . "' class='font-medium text-red-600 dark:text-red-500 hover:underline ml-4'>Delete</a>
+                                <a href='delete_user.php?id=" . $row["id"] . "' class='ml-4 font-medium text-red-600 dark:text-red-500 hover:underline'>Delete</a>
                             </td>
                           </tr>";
                 }
             } else {
-                echo "<tr class='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
+                echo "<tr class='border-b odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 dark:border-gray-700'>
                         <td colspan='4' class='px-6 py-4 text-center'>
                             No results found.
                         </td>

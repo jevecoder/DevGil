@@ -32,7 +32,7 @@
 
     <style>
 .flashLightContainer {
-  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/content.jfif');
+  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/FB_IMG_1583937038835.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +58,7 @@
 }
     </style>
     
-    <div class="w-full h-full bg-contain flashLightContainer">
+    <div class="w-full h-full bg-cover flashLightContainer">
     <nav class="absolute top-0 left-0 z-20 w-full h-40 text-xs text-gray-400 bg-transparent animate__animated animate__fadeInDown">
     <div class="grid grid-cols-4 gap-4 p-8">
       
@@ -186,13 +186,13 @@ const flashlight = document.querySelector(".flashlight");
 <div class="grid justify-between w-full grid-flow-col grid-cols-4 pr-6 font-sans text-sm font-bold -mt-[317px] animate__animated animate__fadeInUp">
     <div class="z-10 grid items-start justify-center w-full col-span-3 grid-rows-1 pt-20 pr-20 font-medium text-gray-200">
     <div class="text-6xl">
-      <p class="text-sm text-[#1ff990]">Latest Design Course</p>
+      <p class="text-sm text-[#1ff990]">Latest Design Plot</p>
       <p>Stand Out as</p>
-      <p>a Web Designer</p>
+      <p>a Web Developer</p>
       <p class="mt-6 font-sans text-sm">This is literally the best advice that I tell every web designer. I’ve stood out for 20+years as a successful <br> web designer, now it’s your turn.</p>
     
       <button class="w-[250px] flex item-center justify-center px-6 py-5 mt-7 font-semibold bg-transparent hover-slide1">
-        <span class="text-sm font-medium">View the Course</span>
+        <span class="text-sm font-medium">View the Plot</span>
     </button>
   
     </div>
@@ -205,9 +205,9 @@ const flashlight = document.querySelector(".flashlight");
     <img class="object-cover w-full h-48" src="./dist/public/login-side.png" alt="Hotel Room">
     <div class="px-6 py-7">
     <div class="flex flex-col">
-      <span class="text-sm font-medium text-black">Get commercials created and shared straight to the heart of the design community.</span>
+      <span class="text-sm font-medium text-black">Get Websites created and shared straight to the heart of the design community.</span>
       <button class="px-6 py-5 mt-2 font-semibold bg-transparent hover-slide">
-        <span class="text-sm font-medium">View Commercials</span>
+        <span class="text-sm font-medium">View Banner</span>
     </button>
     </div>
 
@@ -253,7 +253,7 @@ const flashlight = document.querySelector(".flashlight");
   width: 100%;
   height: 100%;
   background-color: #1ff990;
-  transition: left 0.3s ease;
+  transition: left 0.9s ease;
   z-index: 0;
 }
 
@@ -275,6 +275,42 @@ const flashlight = document.querySelector(".flashlight");
   position: relative;
   z-index: 10;
 }
+
+
+
+
+/* button 3 */
+.hover-slide3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #1ff990; /* Tailwind's blue-500 */
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.hover-slide3:hover::before {
+  left: 0;
+}
+
+.hover-slide3 {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-color: black;
+}
+.hover-slide3:hover {
+  color: black;
+}
+
+.hover-slide3 span {
+  position: relative;
+  z-index: 10;
+}
+/* button 3 */
     </style>
 
     </div>
@@ -557,14 +593,14 @@ const flashlight = document.querySelector(".flashlight");
     
     
   </div>
-  
+
   <!-- home page end  -->
   
       <div class="mt-[690px] shadow-2xl">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-7 delay-[300ms] duration-[600ms] taos:translate-x-[-50px] taos:opacity-0" data-taos-offset="400">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">About Me</h1>
-            <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">I'm Jeril, and I really want to do front-end development. I have experience using HTML, CSS, JavaScript, Tailwind, Laravel, Livewire, Rappasoft PowerGrid, animation, Bootstrap, Figma, and I can also work on network-related tasks.</p>
+            <!-- <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">About Me</h1> -->
+            <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">I really want to do Web development. I have experience using HTML, CSS, JavaScript, Tailwind, Laravel, Livewire, Rappasoft PowerGrid, animation, Bootstrap, Figma, and I can also work on network-related tasks.</p>
             <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
               Get started
               <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -576,7 +612,7 @@ const flashlight = document.querySelector(".flashlight");
             </a>
             <script>
               document.getElementById("downloadButton").addEventListener("click", function() {
-                var pdfFile = './public/JERIL RESUME.pdf';
+                var pdfFile = './public/jeril gil Resume.pdf';
                 var link = document.createElement('a');
                 link.href = pdfFile;
   
@@ -590,7 +626,21 @@ const flashlight = document.querySelector(".flashlight");
             </script>
           </div>
           <div class="flex pt-2 lg:mt-0 lg:col-span-5 sm:justify-center">
-            <img src="./dist/public/profile.png" class="delay-[300ms] duration-[600ms] taos:translate-x-[50px] taos:opacity-0" data-taos-offset="400">
+          <div class="carda carda1">
+    <div class="bordera">
+      <h2>Jeril Gil A, Labagnoy</h2>
+      <div class="icons">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+
+
+            <!-- <img src="./dist/public/profile.png" class="delay-[300ms] duration-[600ms] taos:translate-x-[50px] taos:opacity-0" data-taos-offset="400"> -->
           </div>
         </div>
             </div>
@@ -621,10 +671,14 @@ const flashlight = document.querySelector(".flashlight");
       </div>
       <div class="flex p-10 bg-gray-100">
         <div class="max-w-lg mt-auto mb-auto">
-          <h1 class="text-3xl uppercase">Jeril GIl A, Labagnoy</h1>
+          <h1 class="text-3xl uppercase">Drag and Drop</h1>
           <p class="mb-5 font-semibold">Front-end Developer</p>
           <p>"Hello, have a nice day! and I offer website development services. You can contact me, and we can discuss and agree on the pricing. I also provide computer repair services. Additionally, I have various technologies for sale, so you can explore them on my websites. Thank you for visiting my portfolio. Feel free to hire me for your job offers."</p>
-          <button class="py-3 mt-6 text-white bg-black rounded-md px-7">Email Me</button>
+          <a href="https://jerillabagnoy6.wixsite.com/thegilofgamers">
+        <button class="px-6 py-5 mt-2 font-semibold bg-transparent hover-slide3">
+        <span class="text-sm font-medium">jerillabagnoy6.wixsite.com</span>
+        </button>
+          </a>
         </div>
       </div>
     </div>
@@ -739,7 +793,7 @@ const flashlight = document.querySelector(".flashlight");
           <a href="plot.php">
           <div class="text-center text-white">
             <div class="main">
-              <div class="cardp">
+            <div class="bg-cover cardp" style="background-image: url('./dist/public/tip_caalculator.png');">
                 <div class="fl">
                   <div class="fullscreen">
                     <svg viewBox="0 0 100 100" class="fullscreen_svg">
@@ -750,11 +804,11 @@ const flashlight = document.querySelector(".flashlight");
                 <div class="card_content">
                   <label class="switch_738">
                     <input type="checkbox" class="chk_738">
-                    <span class="slider_738"></span>
+                    <!-- <span class="slider_738"></span> -->
                   </label>
                 </div>
                 <div class="card_back"></div>
-              </div>
+            </div>
               <div class="data">
                 <div class="img">
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 80 80">
@@ -966,9 +1020,9 @@ const flashlight = document.querySelector(".flashlight");
                         Z"></path>
                   </svg>
                 </div>
-                <div class="textp">
-                  <div class="text_m">CSS Theme Switch</div>
-                  <div class="text_s">Praashoo7</div>
+                <div class="overflow-hidden w-44 textp text-clip">
+                  <div class="text_m">Tip Calculator</div>
+                  <div class="text_s">Devgil</div>
                 </div>
               </div>
               <div class="btns">
@@ -2013,7 +2067,16 @@ const flashlight = document.querySelector(".flashlight");
           </div>
 
         </div>
+        <div class="flex justify-center">
+          <a href="plot.php">
+        <button class="w-[250px] flex item-center justify-center px-6 py-5 mt-7 font-semibold bg-transparent hover-slide1">
+        <span class="text-sm font-medium">View More</span>
+        </button>
+          </a>
+        </div>
     </section>
+
+    
   </div>
 
   <!-- projects end  -->

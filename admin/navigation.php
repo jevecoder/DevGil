@@ -39,6 +39,7 @@ $role = "Default Role";
 if (isset($_SESSION['role'])) {
     $role = $_SESSION['role'];
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,8 +64,8 @@ if (isset($_SESSION['role'])) {
   <script src=".../js/script.js"></script>
 </head>
 <body>
-<nav class="bg-white border-b border-gray-300 w-full">
-    <div class="flex items-center flex-row justify-between">
+<nav class="w-full bg-white border-b border-gray-300">
+    <div class="flex flex-row items-center justify-between">
     <div>
       <a href="">
         <img src="../dist/public/LOGO.png" class="w-20 h-20" alt="Flowbite Logo">
@@ -82,8 +83,8 @@ if (isset($_SESSION['role'])) {
       
 
             <!-- Modal Trigger Button -->
-        <div class="hidden md:flex items-center px-16 justify-between w-full">
-<div class="items-start justify-start pl-24 flex-row hidden w-full md:flex md:w-auto" id="navbar-sticky">
+        <div class="items-center justify-between hidden w-full px-16 md:flex">
+<div class="flex-row items-start justify-start hidden w-full pl-24 md:flex md:w-auto" id="navbar-sticky">
         <ul class="flex flex-row p-4 font-medium border rounded-lg md:p-0 md:flex-row md:space-x-4 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <!-- Navigation Links -->
           <li class="hover:text-[#ff3939] text-gray-800">
@@ -106,12 +107,12 @@ if (isset($_SESSION['role'])) {
 
 
 
-<button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:me-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white" type="button">
+<button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm font-medium text-gray-900 rounded-full pe-1 hover:text-blue-600 dark:hover:text-blue-500 md:me-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white" type="button">
   <span class="sr-only">Open user menu</span>
   <?php if (isset($profile_image) && !empty($profile_image)) : ?>
-    <img class="w-8 h-8 me-2 rounded-full" src="data:image/jpeg;base64,<?php echo base64_encode($profile_image); ?>" alt="User Photo">
+    <img class="w-8 h-8 rounded-full me-2" src="data:image/jpeg;base64,<?php echo base64_encode($profile_image); ?>" alt="User Photo">
   <?php else : ?>
-    <img class="w-8 h-8 me-2 rounded-full" src="/path/to/default/profile/image.jpg" alt="Default Profile Photo">
+    <img class="w-8 h-8 rounded-full me-2" src="/path/to/default/profile/image.jpg" alt="Default Profile Photo">
   <?php endif; ?>
   <div class="truncate"><?php echo htmlspecialchars($email); ?></div>
   <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

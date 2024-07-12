@@ -23,195 +23,139 @@
   <script src="../js/script.js"></script>
 </head>
 <body>
-<div id="sideBar" class="relative flex flex-col flex-wrap bg-white border-r border-gray-300 p-6 w-64 animated faster">
+<div id="sideBar" class="relative flex flex-col flex-wrap w-64 p-6 bg-white border-r border-gray-300 animated faster">
     
 
     <!-- sidebar content -->
     <div class="flex flex-col">
 
       <!-- sidebar toggle -->
-      <!-- <div class="text-right hidden md:block">
+      <!-- <div class="hidden text-right md:block">
         <button id="sideBarHideBtn">
           <i class="fad fa-times-circle"></i>
         </button>
       </div> -->
       <!-- end sidebar toggle -->
 
-      <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">Admin</p>
+      <p class="mb-4 text-xs tracking-wider text-gray-600 uppercase">Admin</p>
 
       <!-- link -->
-      <a href="./admin_dashboard.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      <a href="./admin_dashboard.php" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
       <i class="fa-solid fa-chart-bar"></i>             
         Analytics Dashboard
       </a>
       <!-- end link -->
        
       <!-- link -->
-      <a href="./user_management.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-      <i class="fa-solid fa-user text-xs mr-2"></i>
+      <a href="./user_management.php" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+      <i class="mr-2 text-xs fa-solid fa-user"></i>
         User Management
       </a>
       <!-- end link -->
 
-      <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">homes</p>
+      <p class="mb-4 text-xs tracking-wider text-gray-600 uppercase">homes</p>
 
       <!-- link -->
-      <a href="./home_content.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-      <i class="fa-solid fa-house text-xs mr-2"></i>               
+      <a href="./home_content.php" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+      <i class="mr-2 text-xs fa-solid fa-house"></i>               
         Home Content
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fa-solid fa-address-card text-xs mr-2"></i>
+      <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-address-card"></i>
         About
       </a>
       <!-- end link -->
 
        <!-- link -->
-       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-       <i class="fa-solid fa-diagram-project text-xs mr-2"></i>
+       <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+       <i class="mr-2 text-xs fa-solid fa-diagram-project"></i>
         Project Comply
       </a>
       <!-- end link -->
 
        <!-- link -->
-       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-       <i class="fa-brands fa-ideal text-xs mr-2"></i>
+       <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+       <i class="mr-2 text-xs fa-brands fa-ideal"></i>
         Best Deals
       </a>
       <!-- end link -->
 
        <!-- link -->
-       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-       <i class="fa-solid fa-folder-plus text-xs mr-2"></i>
+       <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+       <i class="mr-2 text-xs fa-solid fa-folder-plus"></i>
       Projects
       </a>
       <!-- end link -->
 
        <!-- link -->
-       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-       <i class="fa-solid fa-images text-xs mr-2"></i>
+       <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+       <i class="mr-2 text-xs fa-solid fa-images"></i>
         Gallery
       </a>
       <!-- end link -->
 
        <!-- link -->
-       <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-       <i class="fa-solid fa-certificate text-xs mr-2"></i>
+       <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+       <i class="mr-2 text-xs fa-solid fa-certificate"></i>
         Certificate
       </a>
       <!-- end link -->
 
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Eccomerce</p>
+      <p class="mt-4 mb-4 text-xs tracking-wider text-gray-600 uppercase">Eccomerce</p>
 
       <!-- link -->
-      <a href="./email.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-envelope-open-text text-xs mr-2"></i>
+      <a href="./email.html" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-envelope"></i>
         email
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-comments text-xs mr-2"></i>
+      <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-comments"></i>
         chat
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shield-check text-xs mr-2"></i>
-        todo
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-calendar-edit text-xs mr-2"></i>
-        calendar
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-file-invoice-dollar text-xs mr-2"></i>
+      <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-file-invoice-dollar"></i>
         invoice
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-folder-open text-xs mr-2"></i>
+      <a href="#" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-folder-open"></i>
         file manager
       </a>
       <!-- end link -->   
       
       
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">UI Elements</p>
+      <p class="mt-4 mb-4 text-xs tracking-wider text-gray-600 uppercase">Portfolio</p>
 
       <!-- link -->
-      <a href="./typography.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-text text-xs mr-2"></i>
-        typography
+      <a href="plot.php" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-text"></i>
+        Plot
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="./alert.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-whistle text-xs mr-2"></i>
-        alerts
+      <a href="likeness.php" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-whistle"></i>
+        Likeness
       </a>
       <!-- end link -->
       
 
       <!-- link -->
-      <a href="./buttons.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-cricket text-xs mr-2"></i>
-        buttons
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-box-open text-xs mr-2"></i>
-        Content
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-swatchbook text-xs mr-2"></i>
-        colors
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-atom-alt text-xs mr-2"></i>
-        icons
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-club text-xs mr-2"></i>
-        card
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-cheese-swiss text-xs mr-2"></i>
-        Widgets
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="#" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-computer-classic text-xs mr-2"></i>
-        Components
+      <a href="banner.php" class="mb-3 text-sm font-medium capitalize transition duration-500 ease-in-out hover:text-teal-600">
+        <i class="mr-2 text-xs fa-solid fa-cricket"></i>
+        Banner
       </a>
       <!-- end link -->
       
