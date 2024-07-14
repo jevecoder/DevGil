@@ -36,6 +36,20 @@ $sqlStatements = [
      ("Project 1", "https://example.com/project1", "Plot 1", "icon1.jpg", "thumbnail1.jpg"),
      ("Project 2", "https://example.com/project2", "Plot 2", "icon2.jpg", "thumbnail2.jpg"),
      ("Project 3", "https://example.com/project3", "Plot 3", "icon3.jpg", "thumbnail3.jpg");',
+
+     'CREATE TABLE likeness (
+        CREATE TABLE likeness (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        thumbnail_image VARCHAR(255) NOT NULL,
+        title VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL,
+        views_count INT DEFAULT 0
+    );',
+    // 'INSERT INTO likeness (title, link, plot_name, profile_icon, thumbnail_image)
+    //  VALUES
+    //  ("Project 1", "https://example.com/project1", "Plot 1", "icon1.jpg", "thumbnail1.jpg"),
+    //  ("Project 2", "https://example.com/project2", "Plot 2", "icon2.jpg", "thumbnail2.jpg"),
+    //  ("Project 3", "https://example.com/project3", "Plot 3", "icon3.jpg", "thumbnail3.jpg");',
 ];
 
 // Pagbubukas ng file para sa pagsulat

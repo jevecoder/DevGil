@@ -37,6 +37,7 @@ session_start();
   
     echo "New plot added successfully.";
   }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -310,8 +311,8 @@ const flashlight = document.querySelector(".flashlight");
    <!-- projects  -->
    <div>
     <section class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
-      <div class="flex items-start justify-start max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-        <div class="max-w-screen-sm mx-auto mb-8 lg:mb-16">
+      <div class="flex flex-row items-start justify-start max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+        <div class="mb-8  lg:mb-16">
           <h2 class="mb-4 text-4xl font-medium tracking-tight text-white">My Plot</h2>
 
           <!-- 3d animation image  -->
@@ -504,7 +505,7 @@ if ($result->num_rows > 0) {
           ";
         }
     } else {
-        echo "No plots found.";
+        echo "<div class='flex items-center justify-center text-xl font-normal text-white'>No Plots Found!</div>";
     }
     
     $conn->close();

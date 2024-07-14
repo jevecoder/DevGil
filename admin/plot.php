@@ -2,44 +2,57 @@
 include '../dist/connection.php';
 session_start();
 
-   // Check if form is submitted
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Retrieve form data
-  $title = isset($_POST['title']) ? $_POST['title'] : '';
-  $link = isset($_POST['link']) ? $_POST['link'] : '';
-  $plotName = isset($_POST['plot_name']) ? $_POST['plot_name'] : '';
-  $profileIcon = isset($_FILES['profile_icon']['name']) ? $_FILES['profile_icon']['name'] : '';
-  $thumbnailImage = isset($_FILES['thumbnail_image']['name']) ? $_FILES['thumbnail_image']['name'] : '';
-  $plotId = isset($_POST['id']) ? $_POST['id'] : '';
 
-  // Handle file uploads for profile_icon
-  $profileIconPath = '';
-  if ($profileIcon != '') {
-      $profileIconTmpName = $_FILES['profile_icon']['tmp_name'];
-      $profileIconPath = './uploads/' . $profileIcon;
-      move_uploaded_file($profileIconTmpName, $profileIconPath);
-  }
+// Initialize variables
+$plotTitle = '';
+$link = '';
+$plotName = '';
+$profileIcon = '';
+$thumbnailImage = '';
 
-  // Handle file uploads for thumbnail_image
-  $thumbnailImagePath = '';
-  if ($thumbnailImage != '') {
-      $thumbnailImageTmpName = $_FILES['thumbnail_image']['tmp_name'];
-      $thumbnailImagePath = './uploads/' . basename($thumbnailImage); // Correct path
-      move_uploaded_file($thumbnailImageTmpName, $thumbnailImagePath);
-  }
+// Check if plot ID is provided
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $plot_id = $_GET['id']; // Sanitize $plot_id here if needed
 
-  // Insert into database
-  $query = "INSERT INTO plot (title, link, plot_name, profile_icon, thumbnail_image) 
-            VALUES (?, ?, ?, ?, ?)";
-  $stmt = $conn->prepare($query);
-  $stmt->bind_param('sssss', $title, $link, $plotName, $profileIconPath, $thumbnailImagePath);
-  $stmt->execute();
-  $stmt->close();
+    // Fetch plot details from database
+    $query = "SELECT * FROM plot WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $plot_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-  echo "New plot added successfully.";
+    if ($result->num_rows == 1) {
+        // Fetch plot data
+        $row = $result->fetch_assoc();
+        $plotTitle = $row['title'];
+        $link = $row['link'];
+        $plotName = $row['plot_name'];
+        $profileIcon = $row['profile_icon']; // Ensure this is the correct column name from your database
+        $thumbnailImage = $row['thumbnail_image']; // Ensure this is the correct column name from your database
+    } else {
+        die("Error: Plot not found for ID $plot_id.");
+    }
+
+    $stmt->close();
 }
-  
 
+// Check if form is submitted for deletion
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['delete']) && $_POST['delete'] == 'delete') {
+        $plotId = isset($_POST['id']) ? $_POST['id'] : '';
+
+        // Delete plot from database
+        $query = "DELETE FROM plot WHERE id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('i', $plotId);
+        $stmt->execute();
+        $stmt->close();
+
+        // Redirect to plot list or wherever appropriate
+        header("Location: plot.php"); // Replace with appropriate redirect
+        exit();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +89,31 @@ include '../admin/navigation.php';
 
   <!-- start content -->
    <div class="flex-1 p-6">
+     <a href="create_plot.php">
+     <div class="mb-5 button_slide slide_right">Create Plot</div>
+    </a>
+  <style>
+    .button_slide {
+  color: #000;
+  border-radius: 0px;
+  padding: 10px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #000;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 2s;
+}
+
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #000;
+  color:aliceblue
+}
+
+  </style>
    <div class="grid gap-8 lg:gap-16 sm:grid-rows-2 md:grid-cols-3 lg:grid-cols-4 sm:place-items-center">
 
            <?php
@@ -86,7 +124,7 @@ $result = $conn->query($query);
 // Display data
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-           echo" <a href='edit_plot.php?id=" . $row['id'] . "'>
+           echo"
           <div class='text-center text-white'>
           
             <div class='main'>
@@ -112,11 +150,11 @@ if ($result->num_rows > 0) {
             <!-- image  -->
               <div class='data'>
                 <div class='img'>
-                  <div class='bg-contain cardp' style='background-image: url(\"./uploads/" . htmlspecialchars($row['profile_icon']) . "\")'></div>
+                  <div class='bg-cover cardp' style='background-image: url(\"./uploads/" . htmlspecialchars($row['profile_icon']) . "\")'></div>
                 </div>
                 <div class='overflow-hidden w-44 textp text-clip'>
                 <div class='text_m'>" . htmlspecialchars($row['title']) . "</div>
-                <div class='text_s'>" . htmlspecialchars($row['link']) . "</div>
+                <div class='text_s'><a href='" . htmlspecialchars($row['link']) . "' target='_blank' class='text-white hover:text-black'>" . htmlspecialchars($row['link']) . "</a></div>
                 </div>
               </div>
               <div class='btns'>
@@ -130,6 +168,8 @@ if ($result->num_rows > 0) {
                     <path d='M-391 291.4c0 1.5 1.2 1.7 1.9 1.2 1.8-1.6 15.9-14.6 15.9-14.6h19.3c3.8 0 4.4-.8 4.4-4.5v-31.1c0-3.7-.8-4.5-4.4-4.5h-47.4c-3.6 0-4.4.9-4.4 4.5v31.1c0 3.7.7 4.4 4.4 4.4h10.4v13.5z'></path>
                   </svg><span class='comments_text'>12</span>
                 </div> -->
+                <a class='views' href='edit_plot.php?id=" . $row['id'] . "'>Edit</a>
+                <button type='button' class='views delete-button' data-id='" . $row['id'] . "'>Delete</button>
                 <div class='views'>
                   <svg class='views_svg' viewBox='0 0 30.5 16.5' title='Views'>
                     <path d='M15.3 0C8.9 0 3.3 3.3 0 8.3c3.3 5 8.9 8.3 15.3 8.3s12-3.3 15.3-8.3C27.3 3.3 21.7 0 15.3 0zm0 14.5c-3.4 0-6.2-2.8-6.2-6.2C9 4.8 11.8 2 15.3 2c3.4 0 6.2 2.8 6.2 6.2 0 3.5-2.8 6.3-6.2 6.3z'></path>
@@ -137,16 +177,52 @@ if ($result->num_rows > 0) {
                 </div>
               </div>
             </div>
-            
           </div>
-          </a>";
+          ";
         }
     } else {
-        echo "No plots found.";
+      echo "<div class='flex items-center justify-center text-xl font-normal text-black'>No Plots Found!</div>";
     }
     
     $conn->close();
     ?>
+<!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-gray-200 bg-opacity-50">
+        <div class="max-w-md p-8 bg-white rounded-md shadow-md">
+            <p class="mb-4 text-lg font-bold">Are you sure you want to delete this plot?</p>
+            <div class="flex justify-end">
+                <form id="deleteForm" action="plot.php" method="POST">
+                    <input type="hidden" name="id" id="plotIdInput" value="">
+                    <input type="hidden" name="delete" value="delete">
+                    <button type="submit" class="px-4 py-2 mr-2 text-white bg-red-500 rounded-md">Yes, Delete</button>
+                    <button type="button" id="closeModal" class="px-4 py-2 text-gray-800 bg-gray-300 rounded-md">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+        // Modal script to show/hide delete confirmation
+        const deleteButtons = document.querySelectorAll('.delete-button');
+        const deleteModal = document.getElementById('deleteModal');
+        const closeModal = document.getElementById('closeModal');
+        const plotIdInput = document.getElementById('plotIdInput');
+        const deleteForm = document.getElementById('deleteForm');
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const plotId = button.getAttribute('data-id');
+                plotIdInput.value = plotId;
+                deleteModal.classList.remove('hidden');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            deleteModal.classList.add('hidden');
+        });
+    </script>
+
    </div>
 
 
