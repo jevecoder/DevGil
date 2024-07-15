@@ -1,3 +1,55 @@
+<?php
+include './dist/connection.php';
+session_start();
+
+
+// Initialize variables
+$thumbnailImage = '';
+$likenessTitle = '';
+$description = '';
+
+// Check if plot ID is provided
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $likeness_id = $_GET['id']; // Sanitize $plot_id here if needed
+
+    // Fetch plot details from database
+    $query = "SELECT * FROM likeness WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $likeness_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        // Fetch plot data
+        $row = $result->fetch_assoc();
+        $thumbnailImage = $row['thumbnail_image']; // Ensure this is the correct column name from your database
+        $likenessTitle = $row['title'];
+        $description = $row['description'];
+    } else {
+        die("Error: Plot not found for ID $likeness_id.");
+    }
+
+    $stmt->close();
+}
+
+// Check if form is submitted for deletion
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['delete']) && $_POST['delete'] == 'delete') {
+        $likenessId = isset($_POST['id']) ? $_POST['id'] : '';
+
+        // Delete plot from database
+        $query = "DELETE FROM likeness WHERE id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('i', $likenessId);
+        $stmt->execute();
+        $stmt->close();
+
+        // Redirect to plot list or wherever appropriate
+        header("Location: likeness.php"); // Replace with appropriate redirect
+        exit();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -269,68 +321,236 @@ const flashlight = document.querySelector(".flashlight");
 
 
 <!-- gallery  -->
-<div class="container mt-20">
-  <div class="card-column column-0">
-    <div class="card card-color-0">
-      <div class="border"></div>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-00.jpg" />
-      <h1>Hey now, you're an allstar</h1>
-    </div>
-    <div class="card card-color-2">
-      <div class="border"></div>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-02.jpg" />
-      <h1>Hey now, you're a rock star</h1>
-    </div>
-  </div>
-  <div class="card-column column-1">
-    <div class="card card-color-1">
-      <div class="border"></div>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-01.jpg" />
-      <h1>Get your game on, go play</h1>
-    </div>
-    <div class="card card-color-3">
-      <div class="border"></div>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-03.jpg" />
-      <h1>Get the show on, get paid</h1>
-    </div>
-  </div>
+<div class="grid w-full gap-6 mt-9 sm:grid-rows-2 md:grid-cols-3 lg:grid-cols-2">
+
+<?php
+// Query to retrieve plot data
+$query = "SELECT * FROM likeness";
+$result = $conn->query($query);
+
+// Display data
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      echo "
+      <div class='card card-color-0'>
+          <div class='borderl'></div>
+          <img class='w-full bg-center bg-cover h-52' src='./admin/uploads/" . htmlspecialchars($row['thumbnail_image']) . "' />
+          <h1 class='font-serif text-2xl font-normal'>" . htmlspecialchars($row['title']) . "</h1>
+          <p class='card-description' style='display:none;'>" . htmlspecialchars($row['description']) . "</p>
+      </div>";
+          
+}
+echo "
+<div id='cover' class='cover'></div>
+<div id='open-content' class='open-content'>
+  <a href='#' id='close-content' class='close-content'>
+      <span class='x-1'></span>
+      <span class='x-2'></span>
+  </a>
+  <img id='open-content-image' src='' />
+  <div class='text' id='open-content-text'></div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var cards, nCards, cover, openContent, openContentText, pageIsOpen = false,
+      openContentImage, closeContent, windowWidth, windowHeight, currentCard;
 
-<div id="cover" class="cover"></div>
+  // initiate the process
+  init();
 
-<div id="open-content" class="open-content">
-  <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
-  <img id="open-content-image" src="" />
-  <div class="text" id="open-content-text">
-  </div>
+  function init() {
+      resize();
+      selectElements();
+      attachListeners();
+  }
+
+  // select all the elements in the DOM that are going to be used
+  function selectElements() {
+      cards = document.getElementsByClassName('card');
+      nCards = cards.length;
+      cover = document.getElementById('cover');
+      openContent = document.getElementById('open-content');
+      openContentText = document.getElementById('open-content-text');
+      openContentImage = document.getElementById('open-content-image');
+      closeContent = document.getElementById('close-content');
+  }
+
+  /* Attaching three event listeners here:
+    - a click event listener for each card
+    - a click event listener to the close button
+    - a resize event listener on the window
+  */
+  function attachListeners() {
+      for (var i = 0; i < nCards; i++) {
+          attachListenerToCard(i);
+      }
+      if (closeContent) {
+          closeContent.addEventListener('click', onCloseClick);
+      }
+      window.addEventListener('resize', resize);
+  }
+
+  function attachListenerToCard(i) {
+      cards[i].addEventListener('click', function(e) {
+          var card = getCardElement(e.target);
+          onCardClick(card, i);
+      });
+  }
+
+  /* When a card is clicked */
+  function onCardClick(card, i) {
+      // set the current card
+      currentCard = card;
+      // add the 'clicked' class to the card, so it animates out
+      currentCard.className += ' clicked';
+      // animate the card 'cover' after a 500ms delay
+      setTimeout(function() { animateCoverUp(currentCard); }, 500);
+      // animate out the other cards
+      animateOtherCards(currentCard, true);
+      // add the open class to the page content
+      openContent.className += ' open';
+  }
+
+  /*
+  * This effect is created by taking a separate 'cover' div, placing
+  * it in the same position as the clicked card, and animating it to
+  * become the background of the opened 'page'.
+  * It looks like the card itself is animating in to the background,
+  * but doing it this way is more performant (because the cover div is
+  * absolutely positioned and has no children), and there's just less
+  * having to deal with z-index and other elements in the card
+  */
+  function animateCoverUp(card) {
+      // get the position of the clicked card
+      var cardPosition = card.getBoundingClientRect();
+      // get the style of the clicked card
+      var cardStyle = getComputedStyle(card);
+      setCoverPosition(cardPosition);
+      setCoverColor(cardStyle);
+      scaleCoverToFillWindow(cardPosition);
+      // update the content of the opened page
+      var description = card.querySelector('.card-description').textContent;
+      openContentText.innerHTML = '<h1>' + card.children[2].textContent + '</h1><p>' + description + '</p>';
+      openContentImage.src = card.children[1].src;
+      setTimeout(function() {
+          // update the scroll position to 0 (so it is at the top of the 'opened' page)
+          window.scroll(0, 0);
+          // set page to open
+          pageIsOpen = true;
+      }, 300);
+  }
+
+  function animateCoverBack(card) {
+      var cardPosition = card.getBoundingClientRect();
+      // the original card may be in a different position, because of scrolling, so the cover position needs to be reset before scaling back down
+      setCoverPosition(cardPosition);
+      scaleCoverToFillWindow(cardPosition);
+      // animate scale back to the card size and position
+      cover.style.transform = 'scaleX(' + 1 + ') scaleY(' + 1 + ') translate3d(' + (0) + 'px, ' + (0) + 'px, 0px)';
+      setTimeout(function() {
+          // set content back to empty
+          openContentText.innerHTML = '';
+          openContentImage.src = '';
+          // style the cover to 0x0 so it is hidden
+          cover.style.width = '0px';
+          cover.style.height = '0px';
+          pageIsOpen = false;
+          // remove the clicked class so the card animates back in
+          currentCard.className = currentCard.className.replace(' clicked', '');
+      }, 301);
+  }
+
+  function setCoverPosition(cardPosition) {
+      // style the cover so it is in exactly the same position as the card
+      cover.style.left = cardPosition.left + 'px';
+      cover.style.top = cardPosition.top + 'px';
+      cover.style.width = cardPosition.width + 'px';
+      cover.style.height = cardPosition.height + 'px';
+  }
+
+  function setCoverColor(cardStyle) {
+      // style the cover to be the same color as the card
+      cover.style.backgroundColor = cardStyle.backgroundColor;
+  }
+
+  function scaleCoverToFillWindow(cardPosition) {
+      // calculate the scale and position for the card to fill the page,
+      var scaleX = windowWidth / cardPosition.width;
+      var scaleY = windowHeight / cardPosition.height;
+      var offsetX = (windowWidth / 2 - cardPosition.width / 2 - cardPosition.left) / scaleX;
+      var offsetY = (windowHeight / 2 - cardPosition.height / 2 - cardPosition.top) / scaleY;
+      // set the transform on the cover - it will animate because of the transition set on it in the CSS
+      cover.style.transform = 'scaleX(' + scaleX + ') scaleY(' + scaleY + ') translate3d(' + (offsetX) + 'px, ' + (offsetY) + 'px, 0px)';
+  }
+
+  /* When the close is clicked */
+  function onCloseClick() {
+      // remove the open class so the page content animates out
+      openContent.className = openContent.className.replace(' open', '');
+      // animate the cover back to the original position card and size
+      animateCoverBack(currentCard);
+      // animate in other cards
+      animateOtherCards(currentCard, false);
+  }
+
+  function animateOtherCards(card, out) {
+      var delay = 100;
+      for (var i = 0; i < nCards; i++) {
+          // animate cards on a stagger, 1 each 100ms
+          if (cards[i] === card) continue;
+          if (out) animateOutCard(cards[i], delay);
+          else animateInCard(cards[i], delay);
+          delay += 100;
+      }
+  }
+
+  // animations on individual cards (by adding/removing card names)
+  function animateOutCard(card, delay) {
+      setTimeout(function() {
+          card.className += ' out';
+      }, delay);
+  }
+
+  function animateInCard(card, delay) {
+      setTimeout(function() {
+          card.className = card.className.replace(' out', '');
+      }, delay);
+  }
+
+  // this function searches up the DOM tree until it reaches the card element that has been clicked
+  function getCardElement(el) {
+      if (el.className.indexOf('card ') > -1) return el;
+      else return getCardElement(el.parentElement);
+  }
+
+  // resize function - records the window width and height
+  function resize() {
+      if (pageIsOpen) {
+          // update position of cover
+          var cardPosition = currentCard.getBoundingClientRect();
+          setCoverPosition(cardPosition);
+          scaleCoverToFillWindow(cardPosition);
+      }
+      windowWidth = window.innerWidth;
+      windowHeight = window.innerHeight;
+  }
+});
+</script>";
+} else {
+    echo "<div class='flex items-center justify-center text-xl font-normal text-black'>No Likeness Found!</div>";
+}
+
+$conn->close();
+?>
+
 </div>
 
 
 <style>
 
-/* .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 20px; 
-} */
-    p {
-  line-height: 1.5;
-}
-
 /* Cards */
-.card-column {
-  width: 50%;
-  float: left;
-  padding: 4%;
-  box-sizing: border-box;
-}
-
-.column-1 {
-  padding-top: 100px;
-}
-
 .card {
-  width: 92%;
+  width: 100%;
   max-width: 340px;
   margin-left: auto;
   margin-right: auto;
@@ -341,7 +561,7 @@ const flashlight = document.querySelector(".flashlight");
   margin-bottom: 60px;
 }
 
-.border {
+.borderl {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -369,18 +589,6 @@ const flashlight = document.querySelector(".flashlight");
   background-color: #000;
 }
 
-.card-color-1 {
-  background-color: #8F3985;
-}
-
-.card-color-2 {
-  background-color: #8DAA91;
-}
-
-.card-color-3 {
-  background-color: #888DA7;
-}
-
 /* The cover (expanding background) */
 .cover {
   position: fixed;
@@ -389,10 +597,8 @@ const flashlight = document.querySelector(".flashlight");
   transform-origin: 50% 50%;
 }
 
-/* The open page content */
 .open-content {
-  width: 100%;
-  z-index: 110;
+  z-index: 100;
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -401,8 +607,8 @@ const flashlight = document.querySelector(".flashlight");
 .open-content img {
   position: relative;
   width: 90%;
-  margin-left: 3%;
-  margin-top: 20px;
+  margin-left: 5%;
+  margin-top: -150px;
   z-index: 5;
 }
 
@@ -411,7 +617,6 @@ const flashlight = document.querySelector(".flashlight");
   margin-top: -56%;
   padding: 60% 5% 5% 5%;
   width: 80%;
-  margin-left: 5%;
   margin-bottom: 5%;
 }
 
@@ -428,6 +633,7 @@ const flashlight = document.querySelector(".flashlight");
   top: 12px;
   width: 30px;
   height: 30px;
+  z-index: 100;
 }
 
 .close-content span {
@@ -455,7 +661,7 @@ const flashlight = document.querySelector(".flashlight");
   transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms;
 }
 
-.border {
+.borderl {
   transition: opacity 200ms linear, transform 200ms ease-out;
 }
 
@@ -474,7 +680,7 @@ const flashlight = document.querySelector(".flashlight");
   opacity: 0;
 }
 
-.card.clicked .border {
+.card.clicked .borderl {
   opacity: 0;
   transform: scale(1.3);
 }
@@ -508,14 +714,6 @@ const flashlight = document.querySelector(".flashlight");
 */
 
 @media screen and (max-width: 600px) {
-  .card-column {
-    width: 90%;
-  }
-  
-  .column-1 {
-    padding-top: 0px;
-  }
-  
   .open-content img {
     margin-top: 40px;
   }
