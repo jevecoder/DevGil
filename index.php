@@ -166,7 +166,7 @@ if (isset($_POST['signIn'])) {
 
         if ($row['role'] == 'admin') {
             $message = "Admin login successful.";
-            $redirectUrl = "/DevGil/admin/admin_dashboard.php"; // Admin dashboard
+            $redirectUrl = "/DevGil/admin_token/admin_dashboard.php"; // Admin dashboard
         } else {
             $message = "User login successful.";
             $redirectUrl = "/DevGil/index.php"; // User home

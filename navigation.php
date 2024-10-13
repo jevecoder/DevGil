@@ -67,7 +67,7 @@
           <li class="hover:text-[#ff3939] text-sm text-gray-800 font-semibold">
           <?php
           if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
-            echo '<a href="./admin/admin_dashboard.php">Dashboard</a>';
+            echo '<a href="./admin_token/admin_dashboard.php">Dashboard</a>';
           }
           ?>
           </li>

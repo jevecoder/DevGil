@@ -27,7 +27,7 @@
 
     <style>
 .flashLightContainer {
-  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/content.jfif');
+  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/FB_IMG_1583937038835.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,9 +59,9 @@
       
     <div>  
     <a href="http://localhost/DevGil/portfolio.php" class="relative flex items-center gap-2">
-        <img src="./dist/public/logo_profile1.png" class="h-10 w-9 " alt="Flowbite Logo">
-        <span class="absolute mt-3 font-mono text-3xl font-semibold text-white ml-11">Gil{<i class="fa-solid fa-code"></i>}</span>
-        <span class="absolute mt-24 font-sans text-sm font-semibold text-white">World's fastest Web Development.</span>
+        <img src="./dist/public/LOGO.png" class="w-10 h-10 " alt="Flowbite Logo">
+        <span class="absolute font-mono text-3xl font-semibold text-white ml-11">DGTS</span>
+        <span class="absolute mt-24 font-sans text-sm font-semibold text-white">Developer Gil Technical Solutions.</span>
       </a>
     </div>
 

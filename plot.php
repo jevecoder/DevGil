@@ -15,7 +15,7 @@ session_start();
     $profileIconPath = '';
     if ($profileIcon != '') {
         $profileIconTmpName = $_FILES['profile_icon']['tmp_name'];
-        $profileIconPath = './admin/uploads/' . $profileIcon;
+        $profileIconPath = './admin_token/uploads/' . $profileIcon;
         move_uploaded_file($profileIconTmpName, $profileIconPath);
     }
   
@@ -23,7 +23,7 @@ session_start();
     $thumbnailImagePath = '';
     if ($thumbnailImage != '') {
         $thumbnailImageTmpName = $_FILES['thumbnail_image']['tmp_name'];
-        $thumbnailImagePath = './admin/uploads/' . basename($thumbnailImage); // Correct path
+        $thumbnailImagePath = './admin_token/uploads/' . basename($thumbnailImage); // Correct path
         move_uploaded_file($thumbnailImageTmpName, $thumbnailImagePath);
     }
   
@@ -68,7 +68,7 @@ session_start();
 
     <style>
 .flashLightContainer {
-  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/content.jfif');
+  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/FB_IMG_1583937038835.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,9 +100,9 @@ session_start();
       
     <div>  
     <a href="http://localhost/DevGil/portfolio.php" class="relative flex items-center gap-2">
-        <img src="./dist/public/logo_profile1.png" class="h-10 w-9 " alt="Flowbite Logo">
-        <span class="absolute mt-3 font-mono text-3xl font-semibold text-white ml-11">Gil{<i class="fa-solid fa-code"></i>}</span>
-        <span class="absolute mt-24 font-sans text-sm font-semibold text-white">World's fastest Web Development.</span>
+        <img src="./dist/public/LOGO.png" class="w-10 h-10 " alt="Flowbite Logo">
+        <span class="absolute font-mono text-3xl font-semibold text-white ml-11">DGTS</span>
+        <span class="absolute mt-24 font-sans text-sm font-semibold text-white">Developer Gil Technical Solutions.</span>
       </a>
     </div>
 
@@ -312,7 +312,7 @@ const flashlight = document.querySelector(".flashlight");
    <div>
     <section class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
       <div class="flex flex-row items-start justify-start max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-        <div class="mb-8  lg:mb-16">
+        <div class="mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl font-medium tracking-tight text-white">My Plot</h2>
 
           <!-- 3d animation image  -->
@@ -455,7 +455,7 @@ if ($result->num_rows > 0) {
             <div class='main'>
                 <!-- image   -->
                
-            <div class='bg-cover cardp' style='background-image: url(\"./admin/uploads/" . htmlspecialchars($row['thumbnail_image']) . "\")'>
+            <div class='bg-cover cardp' style='background-image: url(\"./admin_token/uploads/" . htmlspecialchars($row['thumbnail_image']) . "\")'>
                 <div class='fl'>
                   <div class='fullscreen'>
                     <svg viewBox='0 0 100 100' class='fullscreen_svg'>
@@ -475,7 +475,7 @@ if ($result->num_rows > 0) {
             <!-- image  -->
               <div class='data'>
                 <div class='img'>
-                  <div class='bg-contain cardp' style='background-image: url(\"./admin/uploads/" . htmlspecialchars($row['profile_icon']) . "\")'></div>
+                  <div class='bg-contain cardp' style='background-image: url(\"./admin_token/uploads/" . htmlspecialchars($row['profile_icon']) . "\")'></div>
                 </div>
                 <div class='overflow-hidden w-44 textp text-clip'>
                 <div class='text_m'>" . htmlspecialchars($row['title']) . "</div>
