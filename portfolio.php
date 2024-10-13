@@ -502,7 +502,7 @@
 
             <div>
             <figure class="snip1200">
-  <img src="./dist/public/118140142_1106638913063275_5969407913610477226_n.jpg" alt="sq-sample27" />
+  <img src="./dist/public/nobgmission.png" alt="sq-sample27" />
   <figcaption>
     <p>Hire me now as a web developer with experience in creating websites, ERP systems, task management systems, inventory systems, and more. I can also create presentations, web designs, and mockup designs using Canva and Figma.</p>
     <div class="heading">
@@ -516,7 +516,7 @@
             
             <div>
             <figure class="snip1200">
-  <img src="./dist/public/118140142_1106638913063275_5969407913610477226_n.jpg" alt="sq-sample27" />
+  <img src="./dist/public/nobgvission.png" alt="sq-sample27" />
   <figcaption>
     <p>Hire me now as a web developer with experience in creating websites, ERP systems, task management systems, inventory systems, and more. I can also create presentations, web designs, and mockup designs using Canva and Figma.</p>
     <div class="heading">
