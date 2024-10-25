@@ -20,6 +20,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
   <script src="https://kit.fontawesome.com/25c515add0.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <style>
 .flashLightContainer {
             background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), url('./dist/public/FB_IMG_1583937038835.jpg');
@@ -61,14 +62,31 @@
     
     <div class="w-full h-full bg-cover flashLightContainer">
     <div class="flashlight"></div>
-    <nav class="absolute top-0 left-0 z-20 w-full h-40 text-xs text-gray-400 bg-transparent animate__animated animate__fadeInDown">
-    <div class="grid grid-cols-4 gap-4 p-8">
-      
-    <div>  
+    <nav x-data="{ open: false }" class="absolute top-0 left-0 z-20 w-full h-40 text-xs text-gray-400 bg-transparent animate__animated animate__fadeInDown">
+
+    <!-- Toggle Button for Mobile View -->
+  <div class="flex items-center justify-between p-4 sm:hidden">
+    <a href="http://localhost/DevGil/portfolio.php" class="relative flex items-center gap-2">
+      <img src="./dist/public/LOGO.png" class="w-10 h-10" alt="Flowbite Logo">
+      <span class="absolute font-mono text-3xl font-semibold text-white ml-11">DGTS</span>
+      <span class="absolute w-56 mt-24 font-sans text-sm font-semibold text-white">Developer Gil Technical Solutions.</span>
+    </a>
+    <!-- Button to Toggle the Menu -->
+    <button @click="open = !open" class="text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+  </div>
+
+  
+    <div :class="{ 'hidden': !open }" class="grid grid-cols-2 gap-4 p-8 sm:block lg:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+    <div class="items-start justify-start hidden lg:flex">
     <a href="http://localhost/DevGil/portfolio.php" class="relative flex items-center gap-2">
         <img src="./dist/public/LOGO.png" class="w-10 h-10 " alt="Flowbite Logo">
         <span class="absolute font-mono text-3xl font-semibold text-white ml-11">DGTS</span>
-        <span class="absolute mt-24 font-sans text-sm font-semibold text-white">Developer Gil Technical Solutions.</span>
+        <span class="absolute w-56 mt-24 font-sans text-sm font-semibold text-white">Developer Gil Technical Solutions.</span>
       </a>
     </div>
 
@@ -388,11 +406,10 @@
   </div>
 
 
-            <!-- <img src="./dist/public/profile.png" class="delay-[300ms] duration-[600ms] taos:translate-x-[50px] taos:opacity-0" data-taos-offset="400"> -->
           </div>
 
 
-          <div class="mr-auto place-self-center lg:col-span-7 delay-[300ms] duration-[600ms] taos:translate-x-[-50px] taos:opacity-0" data-taos-offset="400">
+          <div class="mr-auto place-self-center lg:col-span-7">
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">What I do?</h1>
             <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">At  Developer Gil Technical Solutions, we specialize in transforming your digital ideas into reality. Our dedicated team of experts excels in crafting custom websites that not only meet but exceed industry standards. We offer a range of services designed to enhance your online presence and drive success:</p>
             <br>
@@ -438,7 +455,7 @@
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
 
 
-        <div class="mr-auto place-self-center lg:col-span-7 delay-[300ms] duration-[600ms] taos:translate-x-[-50px] taos:opacity-0" data-taos-offset="400">
+        <div class="mr-auto place-self-center lg:col-span-7">
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">Hire me?</h1>
             <p class="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl">I really want to do Web development. I have experience using HTML, CSS, JavaScript, Tailwind, Laravel, Livewire, Rappasoft PowerGrid, animation, Bootstrap, Figma, and I can also work on network-related tasks.</p>
             <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
@@ -482,7 +499,7 @@
 </figure>
 
 
-            <!-- <img src="./dist/public/profile.png" class="delay-[300ms] duration-[600ms] taos:translate-x-[50px] taos:opacity-0" data-taos-offset="400"> -->
+            
           </div>
 
 
@@ -497,16 +514,31 @@
 
 
 
+<div class="relative grid grid-rows-2">
+  <div class="grid grid-cols-2">
+    <div class="pl-4">
+  <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">My Mission and Vission Statements</h1>
+  <p class="text-left text-white w-6/6">I'm working on either a rush or non-rush thesis project at an affordable price as long as the terms are clearly agreed upon.</p>
+    </div>
 
-            <div class="grid grid-cols-3 px-8 mt-6">
+    <div class="relative">
+    <div class="absolute top-0 left-0 border border-[#1ff990] z-20 ml-[200px] w-10 h-72"></div>
+    <div class="absolute top-0 right-0 w-16 bg-[#1ff990] h-72"></div>
+    </div>
+</div>
+
+
+
+  
+            <div class="grid px-8 mt-2 bg-[#1b1818] lg:grid-cols-3 sm:grid-cols-1">
 
             <div>
             <figure class="snip1200">
   <img src="./dist/public/nobgmission.png" alt="sq-sample27" />
   <figcaption>
-    <p>Hire me now as a web developer with experience in creating websites, ERP systems, task management systems, inventory systems, and more. I can also create presentations, web designs, and mockup designs using Canva and Figma.</p>
+    <p>To excel in the field of website development by leveraging cutting-edge technologies and creative solutions, while building enduring partnerships with clients and collaborators. Our goal is to continuously expand our client base by delivering exceptional value and exceeding expectations.</p>
     <div class="heading">
-      <h2>My<span> Introductions</span></h2>
+      <h2>My<span> Mission</span></h2>
     </div>
   </figcaption>
   <a href="#"></a>
@@ -518,21 +550,31 @@
             <figure class="snip1200">
   <img src="./dist/public/nobgvission.png" alt="sq-sample27" />
   <figcaption>
-    <p>Hire me now as a web developer with experience in creating websites, ERP systems, task management systems, inventory systems, and more. I can also create presentations, web designs, and mockup designs using Canva and Figma.</p>
+    <p>To establish a leading company renowned for its expertise in innovative project development. We aim to foster a global presence by providing top-notch services and building long-term relationships with clients worldwide, driving forward the future of digital solutions.</p>
     <div class="heading">
-      <h2>My<span> Introductions</span></h2>
+      <h2>My<span> Vission</span></h2>
     </div>
   </figcaption>
   <a href="#"></a>
 </figure>
             </div>
 
-            <div>
-              <div></div>
+            <div class="relative flex items-center justify-center">
+              <div class="z-20 w-5 border border-white -ml-[430px] mt-20 h-60"></div>
+              <div class="absolute top-0 border border-white w-72 -right-8 h-60"></div>
+            <video id="myVideo" class="absolute h-auto rounded-md w-[450px] -mt-72" autoplay loop muted playsinline>
+        <source src="./dist/public/mission vission.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+    const myVideo = document.getElementById('myVideo');
+    video.controls = false;
+</script>
             </div>
 
             </div>
-
+</div>
 
             
 
@@ -542,7 +584,7 @@
   <!-- about  -->
   <div id="about" class="h-full pt-[69px]">
     <section>
-      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
+      <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <figure class="max-w-screen-md mx-auto">
           <blockquote>
             <p class="text-xl font-normal text-white"> I'm a front end developer with 1 year of experience in web development. I've worked on a variety of projects for clients in the Students. I'm passionate about creating great user experiences and have a strong understanding of usability and accessibility standards.</p>
@@ -552,7 +594,7 @@
 
     <!-- component -->
 
-    <div class="grid grid-cols-1 md:grid-cols-2 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
+    <div class="grid grid-cols-1 md:grid-cols-2">
       <div class="">
         <img class="object-cover object-top h-full " src="./dist/public/seller.jpg" alt="">
       </div>
@@ -571,10 +613,10 @@
     </div>
 
     <div class="flex items-center justify-center w-full mb-10 mt-28 profile-skills">
-      <div class="hidden w-4/12 h-52 md:flex sm:flex delay-[300ms] duration-[600ms] taos:[transform:translate3d(-200px,200px,0)] taos:opacity-0" data-taos-offset="300">
+      <div class="hidden w-4/12 h-52 md:flex sm:flex">
         <p class="font-mono text-lg font-bold text-white">Here, you can see all the progress of my skills. If you have any questions, you can contact me through my email. Thank you.</p>
       </div>
-      <div class="delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
+      <div class="">
         <input type="checkbox" id="sk1">
         <label for="sk1"></label>
         <ul class="skills skills1">
@@ -590,7 +632,7 @@
         </ul>
       </div>
 
-      <div class="delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
+      <div class="">
         <input type="checkbox" id="sk2">
         <label for="sk2"></label>
         <ul class="skills skills2">
@@ -606,7 +648,7 @@
         </ul>
       </div>
 
-      <div class="delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400">
+      <div class="">
         <input type="checkbox" id="sk3">
         <label for="sk3"></label>
         <ul class="skills skills3">
@@ -669,7 +711,7 @@
 
   <!-- projects  -->
   <div id="projects" class="h-full pt-[69px]">
-    <section class="delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
+    <section class="">
       <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <div class="max-w-screen-sm mx-auto mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-white">My Projects</h2>
@@ -1972,7 +2014,7 @@
 
   <!-- ct -->
   <div class="h-full px-8">
-  <div class="p-2 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300">
+  <div class="p-2">
         <p class="mb-4 text-2xl font-medium leading-none tracking-tight text-white">Certificate Achievements</p>
       </div>
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -2440,6 +2482,5 @@ figure.snip1187.hover .icon {
 
 
 </body>
-<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 
 </html>
